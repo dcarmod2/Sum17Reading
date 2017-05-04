@@ -111,6 +111,15 @@ Theory of Spectral Categories'' (see references). We can modify
 $Cat_S$ up to weak equivalence to make this a simplicial Quillen
 adjunction.
 
+\begin{remark}
+It might also be helpful to recall that, given a monoidal functor from
+a monoidal category $M$ to a monoidal category $N$, any category
+enriched over $M$ can be reinterpreted as a category enriched over
+$N$. Furthermore, we recover the underlying category of an enriched
+category by considering the functor $M(I,-) : M \rightarrow Set$ where
+$I$ is the unit of the monoidal structure.
+\end{remark}
+
 \item There's a model category $\widehat{\mc A}$ of spectral $\mc
   A$-modules (these are defined as functors, so we put the projective
   model structure on the functor category).
@@ -283,8 +292,30 @@ category. Moreover, the fibrant objects of $L_SC$ are precisely the
 $S$-local objects, and $L_S$ is left proper and simplicial.
 \end{theorem}
 
-In the context of infinity categories, we have the following crucial
-results of Lurie:
+In the context of infinity categories, we have some crucial
+results of Lurie. For these to make sense, however, we need to
+introduce the simplicial nerve construction. This is the
+generalization of the ordinary nerve construction to simplicially
+enriched categories.
+
+\begin{definition}
+We'll define a cosimplicial simplcially enriched category $S$. The
+objects of $S[n]$ are $\{0,1,\dots,n\}$; the hom objects $S[n]_{i,j}
+\in sSet$ for $i,j \in \{0,1,\dots,n\}$ are the nerves
+\[
+S[n](i,j) = N(P_{i,j})
+\]
+of the poset $P_{i,j}$ which is the poset of subsets of $[i,j]$ that
+contain both $i$ and $j$ with partial order given by inclusion.
+\end{definition}
+
+\begin{definition}
+The simplicial nerve of a simplicial category is the simplicial set
+characterized by 
+\[
+Hom_{sSet}(\Delta[n],N(C)) = Hom_{SSetCat}(S[n],C).
+\]
+\end{definition}
 
 \begin{theorem}(HTT A.3.7.6)
 Let $C$ be an $\infty$-category. The following conditions are
@@ -295,6 +326,8 @@ equivalent:
 \item There exists a combinatorial simplicial model category $A$ and
   an equivalence $C \cong N(A^\circ)$.
 \end{enumerate}
+
+Here $A^{\circ}$ is the underlying category of bifibrant objects.
 \end{theorem}
 
 \begin{remark}(HTT A.3.7.7)
