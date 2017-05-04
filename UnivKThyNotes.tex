@@ -14,18 +14,9 @@
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage{tabulary}
+\usepackage{titlesec}
 
-% \newtheoremstyle{exampstyle}
-% {\topsep}
-% {\topsep}
-% {}
-% {}
-% {\bfseries}
-% {.}
-% {.5em}
-% {}
 
-% \theoremstyle{exampstyle}
 
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
@@ -54,8 +45,12 @@
 \DeclareMathOperator*{\colim}{colim}
 \DeclareMathOperator*{\im}{im}
 \DeclareMathOperator*{\coker}{coker}
-% \newenvironment{definition}[1][Definition]{\begin{trivlist}
-% \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 
 
@@ -72,8 +67,8 @@ I'm using the Arxiv version 5 Feb 2013
 
 \section{Spectral Categories}
 
-\subsection*{Summary}
-\subsubsection*{Important definitions}
+\subsection{Summary}
+\subsubsection{Important definitions}
 \begin{tabular}{|c|c|}
 \hline
 Definition & Page Number\\
@@ -93,14 +88,14 @@ Morita equivalence & 11\\
 \hline
 \end{tabular}
 
-\subsubsection*{Notation}
+\subsubsection{Notation}
 \begin{itemize}
 \item $Cat_S$ is the category of small spectral categories and
   spectral functors. 
 \item $Cat_T$ is the category of small simplicial categories and
   simplicial functors. 
 \end{itemize}
-\subsubsection*{Key results}
+\subsubsection{Key results}
 \begin{enumerate}
 \item There's a Quillen adjunction
 \[
@@ -112,6 +107,214 @@ equivalently the simplicial
 set $[n] \mapsto Hom_{Spt}(\mbb S \otimes \Delta^n,F(A,B)) \cong
 Hom_{Spc}(\Delta^n,\Omega^\infty F(A,B)) \cong \Omega^\infty
 F(A,B)_n$. This is the main theorem of Tabuada's paper ``Homotopy
-Theory of Spectral Categories''.
+Theory of Spectral Categories'' (see references). We can modify
+$Cat_S$ up to weak equivalence to make this a simplicial Quillen
+adjunction.
+
+\item There's a model category $\widehat{\mc A}$ of spectral $\mc
+  A$-modules (these are defined as functors, so we put the projective
+  model structure on the functor category).
 \end{enumerate}
+
+\subsection{Background Material}
+
+While the theory of infinity categories allows us to work
+``coordinate-free'' in some sense, we first need some examples of
+meaningful infinity categories and functors between them. One way to
+get a slew of presentable $\infty$-categories is to take the underlying
+infinity category of a left proper, simplicial, combinatorial model
+category. We'll define the simplicial nerve after introducing
+combinatorial model categories.
+
+\subsubsection{Combinatorial Model Categories}
+\begin{definition}
+An infinite cardinal $\kappa$ is a \emph{regular cardinal} if it
+satisfies the following property, which we think of as requiring the
+collection of sets of smaller cardinality to be ``closed
+under union'':
+\begin{itemize}
+\item no set of cardinality $\kappa$ is the union of fewer than
+  $\kappa$ sets of cardinality less than $\kappa$.
+\end{itemize}
+\end{definition}
+
+\begin{example}
+$\aleph_0$, or the cardinality of $\mbb N$, is a regular
+cardinal. This is because any set of cardinality less than $\aleph_0$
+is finite, and no infinite set is a finite union of finite sets.
+\end{example}
+
+\begin{example}
+Any successor cardinal is regular. For $\aleph_1$, this follows from
+the fact that a countable union of countable sets is countable (we
+need choice here).
+\end{example}
+
+
+
+\begin{definition}
+Let $\kappa$ be an infinite regular cardinal. Then a
+\emph{$\kappa$-filtered category} is one such that any diagram $F :D
+\rightarrow C$, where $D$ has fewer than $\kappa$ morphisms admits an
+extension $\widetilde F: D^+ \rightarrow C$ (i.e. $F$ has a
+cocone). Here $D^+$ is the category obtained by freely adjoining a
+terminal object to $D$.
+\end{definition}
+
+\begin{example}
+Let $\kappa = \omega$ (or $\aleph_0$ in the notation we've been
+using). Then we're requiring every FINITE diagram in $C$ to have a
+cocone. This is equivalent to the usual definition of a filtered
+category: a nonempty category s.t. each pair of objects has a join,
+and for any parallel morphisms $f,g: c_1 \rightarrow c_2$ in $C$ there
+exists a morphism $h : c_2 \rightarrow c_3$ such that $hf = hg$. In
+other words, we can build a cocone for any finite diagram from these cocones.
+\end{example}
+
+\begin{example}
+A preorder (there exists a unique morphism between any two objects) is
+$\omega$-filtered precisely when it is \emph{directed}, i.e. any two objects
+have a join.
+\end{example}
+
+\begin{definition}
+Let $\kappa$ be a regular cardinal. Then an object $X$ such that
+$C(X,-)$ commutes with $\kappa$-filtered colimits is called \emph{$\kappa$-compact}.
+\end{definition}
+
+\begin{definition}
+An object $X$ of a category is \emph{small} if it is $\kappa$-compact
+for some regular cardinal $\kappa$.
+\end{definition}
+
+\begin{definition}
+A category $C$ is \emph{locally presentable} if 
+\begin{enumerate}
+\item $C$ is a locally small category
+\item $C$ has all small colimits
+\item there exists a small set $S\hookrightarrow Obj(C)$ of
+  $\lambda$-small objects that generates $C$ under $\lambda$-filtered
+  colimits.
+\item every obect in $C$ is a small object.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Let $C$ be a category and $I \subset Mor(C)$. Let \emph{$cell(I)$} be
+  the class of morphisms obtained by transfinite composition of
+  pushouts of coproducts of elements in $I$.
+\end{definition}
+
+\begin{definition}
+A model category $C$ is \emph{cofibrantly generated} if there are
+small sets of morphisms $I,J \subset Mor(C)$ such that
+\begin{itemize}
+\item $cof(I)$, the set of retracts of elements in $cell(I)$, is
+  precisely the collection of cofibrations of $C$.
+\item $cof(J)$ is precisely the collection of acyclic cofibrations in
+  $C$; and
+\item $I$ and $J$ permit the small object argument. 
+\end{itemize}
+\end{definition}
+
+\begin{definition}(Smith)
+A model category $C$ is \emph{combinatorial} if it is
+
+\begin{itemize}
+\item locally presentable as a category, and 
+\item cofibrantly generated as a model category.
+\end{itemize}
+
+
+\end{definition}
+
+\begin{example}
+The category $sSet$ with the standand model structure on simplicial
+sets is a combinatorial model category. 
+\end{example}
+
+\begin{example}
+The category $sSet$ with the Joyal model structure (so that the
+quasi-categories are the fibrant objects) is combinatorial.
+\end{example}
+
+\begin{question}
+Why should we care that a model category is combinatorial?
+\end{question}
+
+
+
+
+We'll define a left-proper model category, then give a fundamental
+result of Dugger's:
+
+\begin{definition}
+A model category is \emph{left proper} if weak equivalence is
+preserved by pushout along cofibrations.
+\end{definition}
+
+\begin{example}
+A model category in which all objects are cofibrant is left
+proper. This includes the standard model structure on simplicial sets,
+as well the injective model structure on simplicial presheaves. This
+follows from the Reedy lemma, which allows us to calculate homotopy
+pushouts by considering diagrams s.t. the objects are cofibrant and
+one of the maps is a cofibration (the point is that replacing this
+diagram with a cofibrant diagram in the projective model structure on
+diagrams is an acyclic cofibration of diagrams, not just a weak equivalence).
+\end{example}
+
+\begin{theorem}(Dugger)
+
+Every combinatorial model category is Quillen equivalent to a left
+proper simplicial combinatorial model category. 
+\end{theorem}
+
+
+Now, we have the following extremely useful result on Bousfield
+localizations:
+
+
+\begin{theorem}
+If $C$ is a left proper, simplicial, combinatorial model category, and
+$S \subset Mor(C)$ is a small set of morphisms, then the left
+Bousfield localization $L_SC$ does exist as a combinatorial model
+category. Moreover, the fibrant objects of $L_SC$ are precisely the
+$S$-local objects, and $L_S$ is left proper and simplicial.
+\end{theorem}
+
+In the context of infinity categories, we have the following crucial
+results of Lurie:
+
+\begin{theorem}(HTT A.3.7.6)
+Let $C$ be an $\infty$-category. The following conditions are
+equivalent:
+
+\begin{enumerate}
+\item The $\infty$-category $C$ is presentable.
+\item There exists a combinatorial simplicial model category $A$ and
+  an equivalence $C \cong N(A^\circ)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}(HTT A.3.7.7)
+
+Let $A$ and $B$ be combinatorial simplicial model categories. Then the
+underlying $\infty$-categories $N(A^\circ)$ and $N(B^\circ)$ are
+equivalent iff $A$ and $B$ can be joined by a chain of simplicial
+Quillen equivalences. 
+\end{remark}
+
+\begin{theorem}(HTT 5.2.4.6)
+Let $A$ and $B$ be simplicial model categories, and let 
+\[
+\xymatrix{A \ar@<.5ex>[r]^F & \ar@<.5ex>[l]^G B}
+\]
+
+be a simplicial Quillen adjunction. This descends to an adjunction on
+the underlying $\infty$-categories.
+\end{theorem}
+
+
+
 \end{document}
