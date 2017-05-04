@@ -15,8 +15,9 @@
 \usepackage{enumitem}
 \usepackage{tabulary}
 \usepackage{titlesec}
+\usepackage{hyperref}
 
-
+\hypersetup{colorlinks=true,linkcolor=blue}
 
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
@@ -122,8 +123,45 @@ $I$ is the unit of the monoidal structure.
 
 \item There's a model category $\widehat{\mc A}$ of spectral $\mc
   A$-modules (these are defined as functors, so we put the projective
-  model structure on the functor category).
+  model structure on the functor category). The referenced paper here
+  is \href{/References/StabCatAreModuleCat.pdf}{Stable model categories are categories of modules} by Schwede
+  and Shipley.
 \end{enumerate}
+
+\subsection{Clarifying Remarks}
+
+\begin{itemize}
+\item The definition of $A$-module is a generalization of the ordinary
+  one. Recall that a ring is equivalently a preadditive category (an
+  $Ab$-enriched category) with
+  one object, and a module is a functor from this ring to abelian
+  groups. Along the same vein, a ring spectrum is a spectral category with
+  one object, and a module over this ring spectrum is a functor from
+  this category to spectra.
+\item A category of enriched functors is itself enriched. Recall that
+  $Nat(F,G) = \int_C Hom(F-,G-)$. Via the theory of enriched ends we
+  can define a mapping spectrum to be $\int_C A(F-,G-)$, where $A$
+  denotes the mapping spectrum of two objects in our enriched
+  category.
+\item Given a functor $F : \mc A \rightarrow \mc B$, we get an obvious
+  restriction functor $F^* : mod B := \widehat B \rightarrow \widehat A$
+  given by precomposition with $F$ (recall the definition of a module
+  as a functor!). It has a left adjoint functor $F_!$  given by an enriched
+  coend. It sends an $A$-module $N$ to the coequalizer of
+\[
+\xymatrix{\bigvee_{o,p \in A} N(p) \wedge A(o,p) \wedge B(-,{F(o)})
+  \ar@<.5ex>[r] \ar@<-.5ex>[r] & \bigvee_{o \in A} N(o) \wedge B(-,F(o))}.
+\]
+
+Recall that representable objects are ``free on one
+generator''. Indeed, the usual definition of a free object is that
+maps out of it are determined by maps out of a basis. We know, by the
+Yoneda lemma, that maps out of representable objects are determined by
+maps out of the identity morphism.
+
+\item The paper omits the definition of a pretriangulated spectral
+  category. It's in the Mandell-Blumberg paper in the references 
+\end{itemize}
 
 \subsection{Background Material}
 
