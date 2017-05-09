@@ -388,6 +388,151 @@ be a simplicial Quillen adjunction. This descends to an adjunction on
 the underlying $\infty$-categories.
 \end{theorem}
 
+\section{Stable $\infty$-categories}
 
+\subsection{Summary}
+\subsubsection{Important definitions}
+\begin{tabular}{|c|c|}
+\hline
+Definition & Page Number\\
+\hline
+\hline
+Stable $\infty$ category & 14\\
+\hline
+Idempotent complete & 14\\
+\hline
+Spectral Yoneda embedding & 15\\
+\hline
+Stably representable functor & 16\\
+\hline
+Accessible $\infty$-category & 17\\
+\hline
+Presentable $\infty$-category & 17\\
+\hline
+\end{tabular}
+
+\subsubsection{Notation}
+
+\begin{itemize}
+\item $Cat_\infty$ is the $\infty$-category of small $\infty$ categories.
+\item $Cat^{ex}_\infty$ is the $\infty$-category of small stable $\infty$-categories and exact functors. 
+\item $Cat^{perf}_\infty$ is the $\infty$-category of small idempotent complete stable $\infty$-categories (and exact functors).
+\end{itemize}
+
+\subsubsection{Key results}
+
+\begin{enumerate}
+\item If $C$ is a pretriangulated spectral category, then $\pi_0 C$ admits a triangulated category structure.
+
+\item If $C$ is a stable $\infty$-category, then $ho C$ admits a triangulated category structure. 
+
+\item The inclusion $Cat^{perf}_\infty \rightarrow Cat^{ex}_\infty$ has a left adjoint called idempotent completion.
+
+\item If $C$ is a $\infty$-category with finite limits, there is a stable $\infty$-category $Stab(C)$ with a limit preserving functor $\Omega^\infty : Stab(C) \rightarrow C$. In particular, this is accomplished by taking $Stab(C) = Sp(C)$, the category of spectrum objects of $C$. If $C$ is already stable, then $\Omega^\infty$ is an equivalence, with inverse $\Sigma^\infty : C \rightarrow Sp(C)$. 
+
+\item If $C$ is a stable $\infty$-category, there is a \textit{spectral Yoneda embedding}
+$$Y : C \simeq Sp(C_*) \rightarrow Sp(Fun(C^{op}, N(T)^{cf})_*) \simeq Fun(C^{op}, S_\infty)$$
+with an adjoint \textit{mapping spectrum functor}
+$$Map : C^{op} \times C \rightarrow S_\infty$$
+
+\item If $C$ is a stable $\infty$-category, a $C^{op} \rightarrow S_\infty$ is stably representable if and only if it is represented by the suspension spectrum $\Sigma^\infty z$ of some $z \in C$, and this object is unique upto equivalence. 
+
+\end{enumerate}
+
+\subsection{Clarifying Remarks}
+
+\begin{enumerate}
+\item Idempotent completion is unique upto equivalence by HTT Proposition 5.1.4.9. Existence is obtained by taking the full subcategory of $Pre(C)$ spanned by objects that are retracts of objects in the image of $C$ under the Yoneda embedding.
+\item For this paper we assume stable $\infty$-categories to be pointed, i.e. they have zero objects. In the description of spectral Yoneda embedding above, $*$ indicates the subcategory of pointed objects. 
+\end{enumerate}
+
+\subsection{Background Material}
+
+\subsubsection{Pretriangulated Spectral Categories}
+
+The material here is from Section 5 of \href{References/LocalizationTHH.pdf}{Mandell-Blumberg} (in the higher K-theory paper, they say Section 4 but that's either a typo or just not updated). 
+
+\begin{definition}
+A spectral category $C$ is \textit{pretriangulated} if 
+\begin{enumerate}
+\item There exists an object 0 of $C$ such that $C(-,0)$ is homotopically trivial. This means that it is weakly equivalent to the constant functor $*$ at the one point symmetric spectrum. 
+\item Whenever a $C$-module $M$ has the property that $\Sigma M$ is weakly equivalent to a representable $C$-module $C(-,c)$, then $M$ is weakly equivalent to some representable $C$-module $C(-,d)$.
+\item Whenever the $C$-modules $M$ and $N$ are weakly equivalent to representables $C(-,a)$ and $C(-,b)$ respectively, the homotopy cofiber of any map of $C$-modules $M \rightarrow N$ is weakly equivalent to a representable $C$-module.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+The first condition says that the homotopy category $\pi_0 C$ has a zero object. The second condition gives a desuspension functor on $\pi_0 C$ and the third condition gives a suspension functor on $\pi_0 C$. 
+\end{remark}
+
+\begin{definition}
+A spectral functor between spectral categories $F : C \rightarrow D$ is a \textit{DK-embedding} if for all objects $a,b$ in $C$, the induced map of spectra
+$C(a,b) \rightarrow D(Fa,Fb)$ is a weak equivalence. 
+\end{definition}
+
+\begin{remark}
+In Blumberg-Mandell, a DK equivalence is a DK embedding satisfying one of the following equivalent conditions 
+\begin{enumerate}
+\item For all object $d$ of $D$, there is an object $c$ of $C$ such that $D(-,d)$ and $D(-,Fc)$ are naturally isomorphic as $D$-modules.
+\item The induced functor on the ``graded homotopy categorie'' $\pi_* C \rightarrow \pi_* D$ is an equivalence of categories. 
+\end{enumerate}
+In Blumberg-Gepner-Tabuada, this second condition is relaxed to $\pi_0 C \rightarrow \pi_0 D$ being an equivalence of categories. This is because a spectral functor between pretriangulated spectral categories is a DK equivalence if and only if it is a DK embedding and the induced functor on $\pi_0$ is an equivalence of categories. 
+\end{remark}
+
+\begin{theorem}(Blumberg-Mandell, Theorem 5.5)
+Any small spectral category $C$ DK-embeds into a small pretriangulated spectral category. 
+\end{theorem}
+
+\begin{remark}
+We should think of this as taking the closure of $C$ under cofibration sequences and desuspensions in $C$-modules, via the Yoneda embedding. Note that this can be made functorial and it gives the ``minimal pretriangulated closure" of $C$. 
+\end{remark}
+
+\begin{definition}
+A \textit{four-term Puppe sequence} in $\pi_0 C$ is a sequence of the form
+$$a \rightarrow b \rightarrow c \rightarrow \Sigma a$$
+if there exist a map of $C$-modules $f : M \rightarrow N$ such that the sequence
+$$M \rightarrow N \rightarrow Cf \rightarrow \Sigma M$$
+is isomorphic to the above sequence in the derived category of $C$-modules via the Yoneda embedding, and further the equvalence $\Sigma M \simeq C(-,\Sigma a) \simeq \Sigma C(-,a)$ is the suspension of the isomorphism $M \simeq C(-,a)$. 
+\end{definition}
+
+\begin{theorem}(Blumberg-Mandell, Theorem 5.6)
+Given a pretriangulated spectral category $C$, its homotopy category $\pi_0 C$ is triangulated with distinguished triangles the above four-term Puppe sequences. 
+\end{theorem}
+
+\begin{proof}
+Proof of Theorem 5.6 is just observing that $\pi_0 C$ embeds as a full subcategory of the homotopy category of $C$-modules (with projective model structure) and checking that it is closed under suspensions, desuspensions and distinguished triangles. 
+\end{proof}
+
+\subsubsection{$\infty$-Categories}
+
+\begin{definition} The \textbf{Joyal model structure} on simplicial sets is defined as follows : 
+\begin{itemize}
+\item Cofibrations are levelwise monomorphisms.
+\item Weak equivalences are \textit{(weak) categorical equivalence}. These are maps $f : A \rightarrow B$ such that for any $\infty$-category $X$, the map $X^B \rightarrow X^A$ induces an isomorphism on the fundamental category (the homotopy category) $ho C$. 
+\item Fibrations are determined by the above. 
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+All objects are cofibrant, and the fibrant objects are precisely $\infty$-categories. 
+\end{remark}
+
+\begin{theorem}(HA Theorem 1.1.2.15) Let $C$ be a stable $\infty$-category. Then $ho C$ has a triangulated category structure with distinguished triangles coming from cofiber sequences. 
+\end{theorem}
+
+\begin{remark}
+There is a correspondance between pretriangulated spectral categories and stable $\infty$-categories. For example, if $C$ is a pretriangulated spectral category, then $N((ModC)^{cf})$ is a stable $\infty$-category. 
+\end{remark}
+
+\subsubsection{Idempotent completion}
+
+HTT 4.4.5 gives a good overview on the definition of idempotent completion for $\infty$-categories, while comparing it with the classical notion. 
+
+\begin{remark} The notion of retracts between classical and $\infty$-categorical settings are a bit different. An ordinary category $X$ is said to be \textit{idempotent complete} if every idempotent map $X \rightarrow X$ comes from some retract $Y$ of $X$. In such a situation $Y$ can be determined uniquely as an equalizer (or a coequalizer). Hence, if $C$ has finite limits or finite colimits, then $C$ is idempotent complete. 
+
+This is not the case for $\infty$-categories. Consider the category $C_*(R)$ consisting of bounded chain complex of finite rank free $R$-modules and consider $N(C_*(R))$, which is actuallt a stable $\infty$-category. Hence it admits finite limits and colimits, but it is idempotent complete if and only if every finitely generated projective $R$-module is stably free. 
+
+The problem is that an idempotent in an $\infty$-category shouldn't be just a morphism $e$ with $e \circ e \simeq e$ in $ho C$. It should specify homotopies on how to relate multiple compositions $e \circ e \circ ... \circ e \simeq e$. To achieve this, in HTT 4.4.5, simplicial sets called $Idem^+, Idem$ and $Ret$ are introduced. Now idempotents, weak retractions, strong retractions in $C$ are respectively defined to be maps of simplicial sets from $Idem, Ret, Idem^+$ to $C$. $C$ is \textit{idempotent complete} if every idempotent $F : Idem \rightarrow C$ has a colimit. This can be shown to be equivalent to the definition in the paper using results in HTT 5.1.4 and 5.1.5.
+\end{remark}
 
 \end{document}
