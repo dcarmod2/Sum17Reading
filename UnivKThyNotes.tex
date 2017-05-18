@@ -96,7 +96,7 @@ Thick closure &11 & Same as above but take retracts of fintie cell objects.\\
 Triangulated equivalence  & 11& Functor which induces $DK$ equivalence of
                                 triangulated closures.\\
 \hline
-Morita equivalence & 11& Functor which induces $DK$ equivalence of thick closures.\\
+Morita equivalence of Spectral Categories & 11& Functor which induces $DK$ equivalence of thick closures.\\
 \hline
 \end{tabulary}
 
@@ -403,24 +403,44 @@ the underlying $\infty$-categories.
 
 \subsection{Summary}
 \subsubsection{Important definitions}
-\begin{tabular}{|c|c|}
+\begin{tabulary}{0.7 \textwidth}{|C|C|C|}
 \hline
-Definition & Page Number\\
+Term & Page Number & Loose Definition\\
 \hline
 \hline
-Stable $\infty$ category & 14\\
+Stable $\infty$ category & 14 & $\infty$-cat with finite (co)lims
+                                s.t. hopushouts coincide with hopullbacks.\\
 \hline
-Idempotent complete & 14\\
+Idempotent complete & 14 & Image under Yoneda
+                           embedding $C \rightarrow Fun(C^{op},Gpd_\infty)$ is closed under retracts.\\
 \hline
-Spectral Yoneda embedding & 15\\
+Morita equivalence of stab $\infty$-cats& 14& Small stable
+                                              $\infty$-cats $A,B$ are
+                                              ME if Idem($A$) equiv to
+  Idem$(B)$.\\
 \hline
-Stably representable functor & 16\\
+Spectrum Object in Pted $\infty$-cat & 15& A functor $F : N(\Z \times
+                                           \Z) \rightarrow \mc C$
+                                           s.t. certain diagrams are cartesian.\\
 \hline
-Accessible $\infty$-category & 17\\
+Spectral Yoneda embedding for stab $\infty$-cats & 15 & $C \approx
+                                                        Sp(C_*)
+                                                        \rightarrow
+                                                        Sp(Fun(C^{op},Gpd_{\infty})_*)
+  \approx Fun(C^{op},Sp(Gpd_{\infty}))$\\
 \hline
-Presentable $\infty$-category & 17\\
+Stably representable functor & 16 & Functor $C \rightarrow Spt$ equivalent to $Map(-,A)$
+                                    for a spectrum object $A$, where
+                                    $Map$ denotes mapping spectrum.\\
 \hline
-\end{tabular}
+Accessible $\infty$-category & 17 & $\infty$-cat equivalent to $Ind_\kappa$ of
+                                    a small $\infty$-cat.\\
+\hline
+Presentable $\infty$-category & 17 & $\infty$ cat generated under
+                                     sufficiently large filtered
+                                     colimits by some small $\infty$-cat.\\
+\hline
+\end{tabulary}
 
 \subsubsection{Notation}
 
@@ -433,6 +453,9 @@ Presentable $\infty$-category & 17\\
 \subsubsection{Key results}
 
 \begin{enumerate}
+\item Given a pretriangulated spectral category $\mc C$, the
+  $\infty$-category $N((Mod(\mc C))^{cf})$ is stable. 
+
 \item If $C$ is a pretriangulated spectral category, then $\pi_0 C$ admits a triangulated category structure.
 
 \item If $C$ is a stable $\infty$-category, then $ho C$ admits a triangulated category structure. 
