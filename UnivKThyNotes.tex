@@ -17,7 +17,7 @@
 \usepackage{titlesec}
 \usepackage{hyperref}
 
-\hypersetup{colorlinks=true,linkcolor=blue}
+\hypersetup{colorlinks=true,linktoc=all,linkcolor=blue}
 
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
@@ -66,28 +66,39 @@
 \begin{document}
 I'm using the Arxiv version 5 Feb 2013
 
+\tableofcontents
+
 \section{Spectral Categories}
 
 \subsection{Summary}
 \subsubsection{Important definitions}
-\begin{tabular}{|c|c|}
+\begin{tabulary}{0.7 \textwidth}{|C|C|C|}
 \hline
-Definition & Page Number\\
+Term & Page Number & Loose Definition\\
 \hline
 \hline
-Spectral category & 8\\
+Spectral category & 8& Category enriched over the category of
+                       symmetric spectra.\\
 \hline
-$DK$ equivalence &9\\
+$DK$ equivalence &9& Functor which induces stable equivalence of mapping spectra +
+                       equivalence of ``homotopy'' categories.\\
 \hline
-Module over a spectral category &10\\
+Module over a spectral category &10& A spectral functor $A^{op}
+                                     \rightarrow SymmSpt$ for a spectral
+                                     category $A$.\\
 \hline
-Triangulated closure &10 \\
+Triangulated closure &10 & Yoneda embed $A \hookrightarrow \widehat
+                           A^{cf}$ and take finite cell objects
+                           (pushouts of coproducts).\\
 \hline
-Triangulated equivalence  & 11\\
+Thick closure &11 & Same as above but take retracts of fintie cell objects.\\
 \hline
-Morita equivalence & 11\\
+Triangulated equivalence  & 11& Functor which induces $DK$ equivalence of
+                                triangulated closures.\\
 \hline
-\end{tabular}
+Morita equivalence & 11& Functor which induces $DK$ equivalence of thick closures.\\
+\hline
+\end{tabulary}
 
 \subsubsection{Notation}
 \begin{itemize}
