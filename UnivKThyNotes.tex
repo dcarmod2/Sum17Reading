@@ -60,7 +60,7 @@
  \setlength{\headheight}{0pt}
   \lhead{Daniel, Brian, Tsutomu}\chead{UnivKThy Notes}\rhead{Summer 2017}
   \lfoot{}\cfoot{\thepage}\rfoot{}
-  \pagestyle{fancy} 
+  \pagestyle{fancy}
 
 
 \begin{document}
@@ -103,9 +103,9 @@ Morita equivalence of Spectral Categories & 11& Functor which induces $DK$ equiv
 \subsubsection{Notation}
 \begin{itemize}
 \item $Cat_S$ is the category of small spectral categories and
-  spectral functors. 
+  spectral functors.
 \item $Cat_T$ is the category of small simplicial categories and
-  simplicial functors. 
+  simplicial functors.
 \end{itemize}
 \subsubsection{Key results}
 \begin{enumerate}
@@ -248,7 +248,7 @@ for some regular cardinal $\kappa$.
 \end{definition}
 
 \begin{definition}
-A category $C$ is \emph{locally presentable} if 
+A category $C$ is \emph{locally presentable} if
 \begin{enumerate}
 \item $C$ is a locally small category
 \item $C$ has all small colimits
@@ -273,7 +273,7 @@ small sets of morphisms $I,J \subset Mor(C)$ such that
   precisely the collection of cofibrations of $C$.
 \item $cof(J)$ is precisely the collection of acyclic cofibrations in
   $C$; and
-\item $I$ and $J$ permit the small object argument. 
+\item $I$ and $J$ permit the small object argument.
 \end{itemize}
 \end{definition}
 
@@ -281,7 +281,7 @@ small sets of morphisms $I,J \subset Mor(C)$ such that
 A model category $C$ is \emph{combinatorial} if it is
 
 \begin{itemize}
-\item locally presentable as a category, and 
+\item locally presentable as a category, and
 \item cofibrantly generated as a model category.
 \end{itemize}
 
@@ -290,7 +290,7 @@ A model category $C$ is \emph{combinatorial} if it is
 
 \begin{example}
 The category $sSet$ with the standand model structure on simplicial
-sets is a combinatorial model category. 
+sets is a combinatorial model category.
 \end{example}
 
 \begin{example}
@@ -327,7 +327,7 @@ diagrams is an acyclic cofibration of diagrams, not just a weak equivalence).
 \begin{theorem}(Dugger)
 
 Every combinatorial model category is Quillen equivalent to a left
-proper simplicial combinatorial model category. 
+proper simplicial combinatorial model category.
 \end{theorem}
 
 
@@ -362,7 +362,7 @@ contain both $i$ and $j$ with partial order given by inclusion.
 
 \begin{definition}
 The simplicial nerve of a simplicial category is the simplicial set
-characterized by 
+characterized by
 \[
 Hom_{sSet}(\Delta[n],N(C)) = Hom_{SSetCat}(S[n],C).
 \]
@@ -386,11 +386,11 @@ Here $A^{\circ}$ is the underlying category of bifibrant objects.
 Let $A$ and $B$ be combinatorial simplicial model categories. Then the
 underlying $\infty$-categories $N(A^\circ)$ and $N(B^\circ)$ are
 equivalent iff $A$ and $B$ can be joined by a chain of simplicial
-Quillen equivalences. 
+Quillen equivalences.
 \end{remark}
 
 \begin{theorem}(HTT 5.2.4.6)
-Let $A$ and $B$ be simplicial model categories, and let 
+Let $A$ and $B$ be simplicial model categories, and let
 \[
 \xymatrix{A \ar@<.5ex>[r]^F & \ar@<.5ex>[l]^G B}
 \]
@@ -398,6 +398,13 @@ Let $A$ and $B$ be simplicial model categories, and let
 be a simplicial Quillen adjunction. This descends to an adjunction on
 the underlying $\infty$-categories.
 \end{theorem}
+
+
+
+
+
+
+
 
 \section{Stable $\infty$-categories}
 
@@ -459,7 +466,7 @@ Bousfield localization of presentable $\infty$-cat & 19 & Colimit
 
 \begin{itemize}
 \item $Cat_\infty$ is the $\infty$-category of small $\infty$ categories.
-\item $Cat^{ex}_\infty$ is the $\infty$-category of small stable $\infty$-categories and exact functors. 
+\item $Cat^{ex}_\infty$ is the $\infty$-category of small stable $\infty$-categories and exact functors.
 \item $Cat^{perf}_\infty$ is the $\infty$-category of small idempotent complete stable $\infty$-categories (and exact functors).
 \end{itemize}
 
@@ -467,22 +474,22 @@ Bousfield localization of presentable $\infty$-cat & 19 & Colimit
 
 \begin{enumerate}
 \item Given a pretriangulated spectral category $\mc C$, the
-  $\infty$-category $N((Mod(\mc C))^{cf})$ is stable. 
+  $\infty$-category $N((Mod(\mc C))^{cf})$ is stable.
 
 \item If $C$ is a pretriangulated spectral category, then $\pi_0 C$ admits a triangulated category structure.
 
-\item If $C$ is a stable $\infty$-category, then $ho C$ admits a triangulated category structure. 
+\item If $C$ is a stable $\infty$-category, then $ho C$ admits a triangulated category structure.
 
 \item The inclusion $Cat^{perf}_\infty \rightarrow Cat^{ex}_\infty$ has a left adjoint called idempotent completion.
 
-\item If $C$ is a $\infty$-category with finite limits, there is a stable $\infty$-category $Stab(C)$ with a limit preserving functor $\Omega^\infty : Stab(C) \rightarrow C$. In particular, this is accomplished by taking $Stab(C) = Sp(C)$, the category of spectrum objects of $C$. If $C$ is already stable, then $\Omega^\infty$ is an equivalence, with inverse $\Sigma^\infty : C \rightarrow Sp(C)$. 
+\item If $C$ is a $\infty$-category with finite limits, there is a stable $\infty$-category $Stab(C)$ with a limit preserving functor $\Omega^\infty : Stab(C) \rightarrow C$. In particular, this is accomplished by taking $Stab(C) = Sp(C)$, the category of spectrum objects of $C$. If $C$ is already stable, then $\Omega^\infty$ is an equivalence, with inverse $\Sigma^\infty : C \rightarrow Sp(C)$.
 
 \item If $C$ is a stable $\infty$-category, there is a \textit{spectral Yoneda embedding}
 $$Y : C \simeq Sp(C_*) \rightarrow Sp(Fun(C^{op}, N(T)^{cf})_*) \simeq Fun(C^{op}, S_\infty)$$
 with an adjoint \textit{mapping spectrum functor}
 $$Map : C^{op} \times C \rightarrow S_\infty$$
 
-\item If $C$ is a stable $\infty$-category, a $C^{op} \rightarrow S_\infty$ is stably representable if and only if it is represented by the suspension spectrum $\Sigma^\infty z$ of some $z \in C$, and this object is unique upto equivalence. 
+\item If $C$ is a stable $\infty$-category, a $C^{op} \rightarrow S_\infty$ is stably representable if and only if it is represented by the suspension spectrum $\Sigma^\infty z$ of some $z \in C$, and this object is unique upto equivalence.
 
 \end{enumerate}
 
@@ -490,48 +497,48 @@ $$Map : C^{op} \times C \rightarrow S_\infty$$
 
 \begin{enumerate}
 \item Idempotent completion is unique upto equivalence by HTT Proposition 5.1.4.9. Existence is obtained by taking the full subcategory of $Pre(C)$ spanned by objects that are retracts of objects in the image of $C$ under the Yoneda embedding.
-\item For this paper we assume stable $\infty$-categories to be pointed, i.e. they have zero objects. In the description of spectral Yoneda embedding above, $*$ indicates the subcategory of pointed objects. 
+\item For this paper we assume stable $\infty$-categories to be pointed, i.e. they have zero objects. In the description of spectral Yoneda embedding above, $*$ indicates the subcategory of pointed objects.
 \end{enumerate}
 
 \subsection{Background Material}
 
 \subsubsection{Pretriangulated Spectral Categories}
 
-The material here is from Section 5 of \href{References/LocalizationTHH.pdf}{Mandell-Blumberg} (in the higher K-theory paper, they say Section 4 but that's either a typo or just not updated). 
+The material here is from Section 5 of \href{References/LocalizationTHH.pdf}{Mandell-Blumberg} (in the higher K-theory paper, they say Section 4 but that's either a typo or just not updated).
 
 \begin{definition}
-A spectral category $C$ is \textit{pretriangulated} if 
+A spectral category $C$ is \textit{pretriangulated} if
 \begin{enumerate}
-\item There exists an object 0 of $C$ such that $C(-,0)$ is homotopically trivial. This means that it is weakly equivalent to the constant functor $*$ at the one point symmetric spectrum. 
+\item There exists an object 0 of $C$ such that $C(-,0)$ is homotopically trivial. This means that it is weakly equivalent to the constant functor $*$ at the one point symmetric spectrum.
 \item Whenever a $C$-module $M$ has the property that $\Sigma M$ is weakly equivalent to a representable $C$-module $C(-,c)$, then $M$ is weakly equivalent to some representable $C$-module $C(-,d)$.
 \item Whenever the $C$-modules $M$ and $N$ are weakly equivalent to representables $C(-,a)$ and $C(-,b)$ respectively, the homotopy cofiber of any map of $C$-modules $M \rightarrow N$ is weakly equivalent to a representable $C$-module.
 \end{enumerate}
 \end{definition}
 
 \begin{remark}
-The first condition says that the homotopy category $\pi_0 C$ has a zero object. The second condition gives a desuspension functor on $\pi_0 C$ and the third condition gives a suspension functor on $\pi_0 C$. 
+The first condition says that the homotopy category $\pi_0 C$ has a zero object. The second condition gives a desuspension functor on $\pi_0 C$ and the third condition gives a suspension functor on $\pi_0 C$.
 \end{remark}
 
 \begin{definition}
 A spectral functor between spectral categories $F : C \rightarrow D$ is a \textit{DK-embedding} if for all objects $a,b$ in $C$, the induced map of spectra
-$C(a,b) \rightarrow D(Fa,Fb)$ is a weak equivalence. 
+$C(a,b) \rightarrow D(Fa,Fb)$ is a weak equivalence.
 \end{definition}
 
 \begin{remark}
-In Blumberg-Mandell, a DK equivalence is a DK embedding satisfying one of the following equivalent conditions 
+In Blumberg-Mandell, a DK equivalence is a DK embedding satisfying one of the following equivalent conditions
 \begin{enumerate}
 \item For all object $d$ of $D$, there is an object $c$ of $C$ such that $D(-,d)$ and $D(-,Fc)$ are naturally isomorphic as $D$-modules.
-\item The induced functor on the ``graded homotopy categorie'' $\pi_* C \rightarrow \pi_* D$ is an equivalence of categories. 
+\item The induced functor on the ``graded homotopy categorie'' $\pi_* C \rightarrow \pi_* D$ is an equivalence of categories.
 \end{enumerate}
-In Blumberg-Gepner-Tabuada, this second condition is relaxed to $\pi_0 C \rightarrow \pi_0 D$ being an equivalence of categories. This is because a spectral functor between pretriangulated spectral categories is a DK equivalence if and only if it is a DK embedding and the induced functor on $\pi_0$ is an equivalence of categories. 
+In Blumberg-Gepner-Tabuada, this second condition is relaxed to $\pi_0 C \rightarrow \pi_0 D$ being an equivalence of categories. This is because a spectral functor between pretriangulated spectral categories is a DK equivalence if and only if it is a DK embedding and the induced functor on $\pi_0$ is an equivalence of categories.
 \end{remark}
 
 \begin{theorem}(Blumberg-Mandell, Theorem 5.5)
-Any small spectral category $C$ DK-embeds into a small pretriangulated spectral category. 
+Any small spectral category $C$ DK-embeds into a small pretriangulated spectral category.
 \end{theorem}
 
 \begin{remark}
-We should think of this as taking the closure of $C$ under cofibration sequences and desuspensions in $C$-modules, via the Yoneda embedding. Note that this can be made functorial and it gives the ``minimal pretriangulated closure" of $C$. 
+We should think of this as taking the closure of $C$ under cofibration sequences and desuspensions in $C$-modules, via the Yoneda embedding. Note that this can be made functorial and it gives the ``minimal pretriangulated closure'' of $C$.
 \end{remark}
 
 \begin{definition}
@@ -539,47 +546,143 @@ A \textit{four-term Puppe sequence} in $\pi_0 C$ is a sequence of the form
 $$a \rightarrow b \rightarrow c \rightarrow \Sigma a$$
 if there exist a map of $C$-modules $f : M \rightarrow N$ such that the sequence
 $$M \rightarrow N \rightarrow Cf \rightarrow \Sigma M$$
-is isomorphic to the above sequence in the derived category of $C$-modules via the Yoneda embedding, and further the equvalence $\Sigma M \simeq C(-,\Sigma a) \simeq \Sigma C(-,a)$ is the suspension of the isomorphism $M \simeq C(-,a)$. 
+is isomorphic to the above sequence in the derived category of $C$-modules via the Yoneda embedding, and further the equvalence $\Sigma M \simeq C(-,\Sigma a) \simeq \Sigma C(-,a)$ is the suspension of the isomorphism $M \simeq C(-,a)$.
 \end{definition}
 
 \begin{theorem}(Blumberg-Mandell, Theorem 5.6)
-Given a pretriangulated spectral category $C$, its homotopy category $\pi_0 C$ is triangulated with distinguished triangles the above four-term Puppe sequences. 
+Given a pretriangulated spectral category $C$, its homotopy category $\pi_0 C$ is triangulated with distinguished triangles the above four-term Puppe sequences.
 \end{theorem}
 
 \begin{proof}
-Proof of Theorem 5.6 is just observing that $\pi_0 C$ embeds as a full subcategory of the homotopy category of $C$-modules (with projective model structure) and checking that it is closed under suspensions, desuspensions and distinguished triangles. 
+Proof of Theorem 5.6 is just observing that $\pi_0 C$ embeds as a full subcategory of the homotopy category of $C$-modules (with projective model structure) and checking that it is closed under suspensions, desuspensions and distinguished triangles.
 \end{proof}
 
 \subsubsection{$\infty$-Categories}
 
-\begin{definition} The \textbf{Joyal model structure} on simplicial sets is defined as follows : 
+\begin{definition} The \textbf{Joyal model structure} on simplicial sets is defined as follows :
 \begin{itemize}
 \item Cofibrations are levelwise monomorphisms.
-\item Weak equivalences are \textit{(weak) categorical equivalence}. These are maps $f : A \rightarrow B$ such that for any $\infty$-category $X$, the map $X^B \rightarrow X^A$ induces an isomorphism on the fundamental category (the homotopy category) $ho C$. 
-\item Fibrations are determined by the above. 
+\item Weak equivalences are \textit{(weak) categorical equivalence}. These are maps $f : A \rightarrow B$ such that for any $\infty$-category $X$, the map $X^B \rightarrow X^A$ induces an isomorphism on the fundamental category (the homotopy category) $ho C$.
+\item Fibrations are determined by the above.
 \end{itemize}
 \end{definition}
 
 \begin{remark}
-All objects are cofibrant, and the fibrant objects are precisely $\infty$-categories. 
+All objects are cofibrant, and the fibrant objects are precisely $\infty$-categories.
 \end{remark}
 
-\begin{theorem}(HA Theorem 1.1.2.15) Let $C$ be a stable $\infty$-category. Then $ho C$ has a triangulated category structure with distinguished triangles coming from cofiber sequences. 
+\begin{theorem}(HA Theorem 1.1.2.15) Let $C$ be a stable $\infty$-category. Then $ho C$ has a triangulated category structure with distinguished triangles coming from cofiber sequences.
 \end{theorem}
 
 \begin{remark}
-There is a correspondance between pretriangulated spectral categories and stable $\infty$-categories. For example, if $C$ is a pretriangulated spectral category, then $N((ModC)^{cf})$ is a stable $\infty$-category. 
+There is a correspondance between pretriangulated spectral categories and stable $\infty$-categories. For example, if $C$ is a pretriangulated spectral category, then $N((ModC)^{cf})$ is a stable $\infty$-category.
 \end{remark}
 
 \subsubsection{Idempotent completion}
 
-HTT 4.4.5 gives a good overview on the definition of idempotent completion for $\infty$-categories, while comparing it with the classical notion. 
+HTT 4.4.5 gives a good overview on the definition of idempotent completion for $\infty$-categories, while comparing it with the classical notion.
 
-\begin{remark} The notion of retracts between classical and $\infty$-categorical settings are a bit different. An ordinary category $X$ is said to be \textit{idempotent complete} if every idempotent map $X \rightarrow X$ comes from some retract $Y$ of $X$. In such a situation $Y$ can be determined uniquely as an equalizer (or a coequalizer). Hence, if $C$ has finite limits or finite colimits, then $C$ is idempotent complete. 
+\begin{remark} The notion of retracts between classical and $\infty$-categorical settings are a bit different. An ordinary category $X$ is said to be \textit{idempotent complete} if every idempotent map $X \rightarrow X$ comes from some retract $Y$ of $X$. In such a situation $Y$ can be determined uniquely as an equalizer (or a coequalizer). Hence, if $C$ has finite limits or finite colimits, then $C$ is idempotent complete.
 
-This is not the case for $\infty$-categories. Consider the category $C_*(R)$ consisting of bounded chain complex of finite rank free $R$-modules and consider $N(C_*(R))$, which is actuallt a stable $\infty$-category. Hence it admits finite limits and colimits, but it is idempotent complete if and only if every finitely generated projective $R$-module is stably free. 
+This is not the case for $\infty$-categories. Consider the category $C_*(R)$ consisting of bounded chain complex of finite rank free $R$-modules and consider $N(C_*(R))$, which is actuallt a stable $\infty$-category. Hence it admits finite limits and colimits, but it is idempotent complete if and only if every finitely generated projective $R$-module is stably free.
 
 The problem is that an idempotent in an $\infty$-category shouldn't be just a morphism $e$ with $e \circ e \simeq e$ in $ho C$. It should specify homotopies on how to relate multiple compositions $e \circ e \circ ... \circ e \simeq e$. To achieve this, in HTT 4.4.5, simplicial sets called $Idem^+, Idem$ and $Ret$ are introduced. Now idempotents, weak retractions, strong retractions in $C$ are respectively defined to be maps of simplicial sets from $Idem, Ret, Idem^+$ to $C$. $C$ is \textit{idempotent complete} if every idempotent $F : Idem \rightarrow C$ has a colimit. This can be shown to be equivalent to the definition in the paper using results in HTT 5.1.4 and 5.1.5.
 \end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Symmetric Monoidal Structures and Dualizable Objects}
+
+\subsection{Summary}
+
+\subsubsection{Important definitions}
+\begin{tabulary}{0.7\textwidth}{|C|C|C|}
+\hline
+Term & pg & Loose Definition\\
+\hline
+\hline
+Tensor Product for $\mathrm{Cat}^\mathrm{Perf}_\infty$ & 20 & If $\mathcal{A}$ and $\mathcal{B}$ are small stable idempotent-complete $\infty$-categories, we define $\mathcal{A} \widehat{\otimes} \mathcal{B} = (\mathrm{Ind}(\mathcal{A}) \otimes \mathrm{Ind}(\mathcal{B}))^\omega$. \\ \hline
+Right-Compact Object & 21 & An object of $\mathrm{Fun}^\mathrm{ex}(\mathcal{A} \widehat{\otimes} \mathcal{B}^\mathrm{op} , \mathcal{S}_\infty)$ is right-compact if putting in some object $a \in \mathcal{A}$ in the left argument always yields a compact object of $\mathrm{Fun}^\mathrm{ex}(\mathcal{B}^\mathrm{op} , \mathcal{S}_\infty)$. \\ \hline
+Proper Stable $\infty$-Category & 22 & Mapping spectra are compact. \\ \hline
+Smooth Stable $\infty$-Category & 22 & Perfect as a bimodule over itself. If $\mathcal{A}$ is idempotent-complete, then it is smooth if and only if it is a representable $\mathcal{A}^{\mathrm{op}} \widehat{\otimes} \mathcal{A}$-module. (``Coherent''?) \\ \hline
+Dualizable & 22 & An object of a symmetric monoidal $\infty$-category is dualizable if it is dualizable in the homotopy category. \\ \hline
+\end{tabulary}
+
+
+\subsubsection{Notation}
+
+\begin{itemize}
+    \item The $\infty$-category $\mathrm{Cat}_\infty^\mathrm{Perf}$ admits a symmetric monoidal structure. We write the tensor product as $\widehat{\otimes}$ to distinguish it from the usual tensor product of presentable stable $\infty$-categories.
+\end{itemize}
+
+
+\subsubsection{Key results}
+
+\begin{enumerate}
+    \item The $\infty$-category $\mathrm{Cat}_\infty^\mathrm{Perf}$ admits the structure of a closed symmetric monoidal $\infty$-category with tensor product given by $\widehat{\otimes}$. The unit is the $\infty$-category $\mathcal{S}_\infty^\omega$ of compact spectra. Internal $\mathrm{Hom}$ is given by $\mathrm{Fun}^\mathrm{ex}(\mathcal{A},\mathcal{B})$.
+
+    \item For any small stable $\infty$-category $\mathcal{A}$, the stable Yoneda embedding $\mathcal{A} \to \mathrm{Fun}^\mathrm{ex}(\mathcal{A}^\mathrm{op}, \mathcal{S}_\infty)$ induces an equivalence $\mathrm{Ind}(A) \simeq \mathrm{Fun}^\mathrm{ex}(\mathcal{A}^\mathrm{op}, \mathcal{S}_\infty)$. In particular, one can model the idempotent-completion of $\mathcal{A}$ by the Yoneda embedding $\mathcal{A} \to \mathrm{Fun}^\mathrm{ex}(\mathcal{A}^\mathrm{op}, \mathcal{S}_\infty)^\omega$.
+
+    \item Let $\mathcal{A}$ and $\mathcal{B}$ be small stable idempotent-complete $\infty$-categories. The functor category $\mathrm{Fun}^\mathrm{ex}(\mathcal{A},\mathcal{B})$ can be identified as a full subcategory of the $\infty$-category $\mathrm{Fun}^\mathrm{ex}(\mathcal{A}\widehat{\otimes} \mathcal{B}^\mathrm{op}, \mathcal{S}_\infty)$ of $\mathcal{A}^\mathrm{op} \widehat{\otimes} \mathcal{B}$-modules. In fact, it is the full subcategory spanned by right-compact $\mathcal{A}^\mathrm{op} \widehat{\otimes} \mathcal{B}$-modules. (Note, I believe there is a small typo in the second-to-last paragraph of page 21, where it says ``\ldots certain subcategory of $\mathrm{Fun}^\mathrm{L}(\mathcal{A}\widehat{\otimes} \mathcal{B}^\mathrm{op}, \mathcal{S}_\infty)$''; superscript should be $\mathrm{ex}$, not $\mathrm{L}$.)
+
+    \item An object $\mathcal{A}$ of $\mathrm{Cat}_\infty^\mathrm{Perf}$ is dualizable (with respect to the symmetric monoidal structure on $\mathrm{Cat}_\infty^\mathrm{Perf}$) if and only if $\mathcal{A}$ is smooth and proper. Moreover, if $\mathcal{A}$ is dualizable, its dual is given by $\mathcal{A}^\mathrm{op}$.
+
+\end{enumerate}
+
+
+\subsection{Clarifying Remarks}
+
+\begin{enumerate}
+    \item Not sure what needs clarification, but I'm probably not reading sufficiently carefully\ldots
+\end{enumerate}
+
+
+\subsection{Background Material}
+
+\subsubsection{Symmetric Monoidal $\infty$-Categories}
+The following can be found in chapter 2 of \href{References/LurieHigherAlgebra.pdf}{HA}. In particular, the introduction to this chapter is a very clear introduction to the main idea.
+
+In ordinary category theory, a symmetric monoidal structure on a category $\mathcal{C}$ is usually described by a functor $\otimes : \mathcal{C} \times \mathcal{C} \to \mathcal{C}$, an identity object $1 \in \mathcal{C}$ and natural isomorphisms describing associativity, commutativity, and unitality. In this setting, one demands that these natural isomorphisms satisfy coherence conditions. If one tries to do something analogous in the setting of $\infty$-categories, one will quickly find that higher and higher coherence conditions must be imposed, to the point where this is prohibitively complicated. We will thus need to try something.
+
+Another way to describe a symmetric monoidal structure on an ordinary category $\mathcal{C}$ is by a Grothendieck opfibration. Let $\mathscr{F}\mathrm{in}_*$ denote the category consisting of objects $\langle n \rangle = \{1, \ldots, n \} \sqcup \{*\}$ ($n \geq 0$) and functions between these sets that preserve $*$. By abuse, we will identify this category with the category of pointed finite sets. Some useful morphisms in $\mathscr{F}\mathrm{in}_*$ are the functions $\rho_i: \langle n \rangle \to \langle 1 \rangle$ given by
+\[
+    \rho_i(j) = \left\{
+    \begin{tabular}{cl}
+        $1$ & if $j=i$ \\
+        $*$ & otherwise.
+    \end{tabular}
+    \right.
+\]
+
+Given a symmetric monoidal category $\mathcal{C}$, we can form a category $\mathcal{C}^\otimes$ in which
+\begin{itemize}
+    \item objects are finite (possibly empty) sequences of objects of $\mathcal{C}$, denoted by $[C_1, \ldots, C_n]$
+    \item A morphism $f : [C_1, \ldots, C_n] \to [C_1', \ldots, C_m']$ consists of a subset $S \subseteq \{1, \ldots, n\}$, a map $\alpha : S \to \{1, \ldots, m\}$, and a collection of morphisms $\{f_j: \bigotimes_{\alpha(i)=j} C_i\to C_j'\}_{1 \leq j \leq m}$, and
+    \item composition is defined in the only sensible way. See the introduction of chapter 2 of \href{References/LurieHigherAlgebra.pdf}{HA}.
+\end{itemize}
+We get a forgetful functor $\mathcal{C}^\otimes \to \mathscr{F}\mathrm{in}_*$. In fact, this functor is a Grothendieck opfibration. We can identify $\mathcal{C}$ with the fibre $\mathcal{C}^\otimes_{\langle 1 \rangle}$ over $\langle 1 \rangle \in \mathscr{F}\mathrm{in}_*$ . It has the special feature that the functors $\mathcal{C}^\otimes_{\langle n \rangle} \to \mathcal{C}$  induced by $\rho_i : \langle n \rangle \to \langle 1 \rangle$ assemble into an equivalence $\mathcal{C}^\otimes_{\langle n \rangle} \to \mathcal{C}^n$. (This is often referred to as a ``Segal condition''.) The main result is that a symmetric monoidal structure on $\mathcal{C}$ can be recovered from such a Grothendieck opfibration. Moreover, this construction generalizes readily to the $\infty$-category setting, as demonstrated in the following definition.
+
+\begin{definition}
+    A \emph{symmetric monoidal $\infty$-category} is a coCartesian fibration of simplicial sets $\mathcal{C}^\otimes \to \mathscr{F}\mathrm{in}_*$ such that, for each $n \geq 0$, the maps $\{\rho_i : \langle n \rangle \to \langle 1 \rangle \}_{1 \leq i \leq n}$ induce functors $\mathcal{C}^\otimes_{\langle n \rangle} \to \mathcal{C}^\otimes_{\langle 1 \rangle}$ that assemble into an equivalence $\mathcal{C}^\otimes_{\langle n \rangle} \to (\mathcal{C}^\otimes_{\langle 1 \rangle})^n$.
+\end{definition}
+
+Here, we make the usual abuse of notation of writing $\mathscr{F}\mathrm{in}_*$ instead of $N(\mathscr{F}\mathrm{in}_*)$. It should be noted that, given a symmetric monoidal $\infty$-category $\mathcal{C}^\otimes \to \mathscr{F}\mathrm{in}_*$, one typically thinks of $\mathcal{C}^\otimes_{\langle 1 \rangle}$ as having been given a symmetric monoidal structure.
 
 \end{document}
