@@ -650,7 +650,30 @@ Dualizable & 22 & An object of a symmetric monoidal $\infty$-category is dualiza
 \subsection{Clarifying Remarks}
 
 \begin{enumerate}
-    \item Not sure what needs clarification, but I'm probably not reading sufficiently carefully\ldots
+    \item This chapter assumes the monoidal structure on the
+      $\infty$-category of presentable, stable $\infty$ categories,
+      then defines some other monoidal products. The definition of the
+      monoidal structure $\otimes$ on $\mc Pr_{St}^L$ is involved. In
+      fact, it must be involved; the unit of this monoidal
+      structure is the category $Sp$ of spectra. Hence, defining
+      this monoidal structure gives us, in particular, a smash product
+      of spectra.
+      \item Key result (2) above is one step in showing that the
+        definition of Morita equivalence via Idempotent completion
+        matches the definition in terms of module categories. 
+        \item There's a slight difference in notation: BGT denote a
+          symmetric monoidal infinity category by $\mc C^{\infty}$,
+          whereas below we define a symmetric monoidal infinity
+          category asa coCartesian fibration $\mc C^{\infty}
+          \rightarrow \mathscr F\mathrm{in}_*$.
+          \item The terminology ``smooth'' and ``proper'' here comes
+            from $dg$-categories (recall that this paper is a
+            translation of Tabuada's work into the language of
+            $\infty$-categories). In particular, a smooth proper $dg$
+            category is one which closely resembles the category of
+            perfect complexes on a smooth proper scheme, and these
+            $dg$ categories can be characterized as the dualizable
+            objects in some category of $dg$ categories.
 \end{enumerate}
 
 
@@ -677,7 +700,31 @@ Given a symmetric monoidal category $\mathcal{C}$, we can form a category $\math
     \item A morphism $f : [C_1, \ldots, C_n] \to [C_1', \ldots, C_m']$ consists of a subset $S \subseteq \{1, \ldots, n\}$, a map $\alpha : S \to \{1, \ldots, m\}$, and a collection of morphisms $\{f_j: \bigotimes_{\alpha(i)=j} C_i\to C_j'\}_{1 \leq j \leq m}$, and
     \item composition is defined in the only sensible way. See the introduction of chapter 2 of \href{References/LurieHigherAlgebra.pdf}{HA}.
 \end{itemize}
-We get a forgetful functor $\mathcal{C}^\otimes \to \mathscr{F}\mathrm{in}_*$. In fact, this functor is a Grothendieck opfibration. We can identify $\mathcal{C}$ with the fibre $\mathcal{C}^\otimes_{\langle 1 \rangle}$ over $\langle 1 \rangle \in \mathscr{F}\mathrm{in}_*$ . It has the special feature that the functors $\mathcal{C}^\otimes_{\langle n \rangle} \to \mathcal{C}$  induced by $\rho_i : \langle n \rangle \to \langle 1 \rangle$ assemble into an equivalence $\mathcal{C}^\otimes_{\langle n \rangle} \to \mathcal{C}^n$. (This is often referred to as a ``Segal condition''.) The main result is that a symmetric monoidal structure on $\mathcal{C}$ can be recovered from such a Grothendieck opfibration. Moreover, this construction generalizes readily to the $\infty$-category setting, as demonstrated in the following definition.
+We get a forgetful functor $\mathcal{C}^\otimes \to
+\mathscr{F}\mathrm{in}_*$. In fact, this functor is a Grothendieck
+opfibration. We can identify $\mathcal{C}$ with the fibre
+$\mathcal{C}^\otimes_{\langle 1 \rangle}$ over $\langle 1 \rangle \in
+\mathscr{F}\mathrm{in}_*$ . It has the special feature that the
+functors $\mathcal{C}^\otimes_{\langle n \rangle} \to \mathcal{C}$
+induced by $\rho_i : \langle n \rangle \to \langle 1 \rangle$ assemble
+into an equivalence $\mathcal{C}^\otimes_{\langle n \rangle} \to
+\mathcal{C}^n$. (This is often referred to as a ``Segal condition''.)
+The main result is that a symmetric monoidal structure on
+$\mathcal{C}$ can be recovered from such a Grothendieck
+opfibration. Moreover, this construction generalizes readily to the
+$\infty$-category setting, as demonstrated in the following
+definition.
+
+\begin{remark}
+This Segal condition gives us functors $\mc C^2 \rightarrow \mc
+C^{\otimes}_{\langle 2 \rangle} \xrightarrow{} \mc C$, which is how we
+can recover the symmetric monoidal product from the category defined
+above. So just to clarify, defining the category $\mc C^\otimes$ will
+require us to specify what the objects $ C_1 \otimes \dots \otimes
+C_j$ are. The point is that defining the bifunctor $\otimes$ by
+specifying it in the form above lets us give a ``minimal
+presentation'' of the coherence conditions.
+\end{remark}
 
 \begin{definition}
     A \emph{symmetric monoidal $\infty$-category} is a coCartesian fibration of simplicial sets $\mathcal{C}^\otimes \to \mathscr{F}\mathrm{in}_*$ such that, for each $n \geq 0$, the maps $\{\rho_i : \langle n \rangle \to \langle 1 \rangle \}_{1 \leq i \leq n}$ induce functors $\mathcal{C}^\otimes_{\langle n \rangle} \to \mathcal{C}^\otimes_{\langle 1 \rangle}$ that assemble into an equivalence $\mathcal{C}^\otimes_{\langle n \rangle} \to (\mathcal{C}^\otimes_{\langle 1 \rangle})^n$.
