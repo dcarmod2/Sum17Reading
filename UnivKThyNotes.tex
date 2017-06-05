@@ -730,6 +730,131 @@ presentation'' of the coherence conditions.
     A \emph{symmetric monoidal $\infty$-category} is a coCartesian fibration of simplicial sets $\mathcal{C}^\otimes \to \mathscr{F}\mathrm{in}_*$ such that, for each $n \geq 0$, the maps $\{\rho_i : \langle n \rangle \to \langle 1 \rangle \}_{1 \leq i \leq n}$ induce functors $\mathcal{C}^\otimes_{\langle n \rangle} \to \mathcal{C}^\otimes_{\langle 1 \rangle}$ that assemble into an equivalence $\mathcal{C}^\otimes_{\langle n \rangle} \to (\mathcal{C}^\otimes_{\langle 1 \rangle})^n$.
 \end{definition}
 
-Here, we make the usual abuse of notation of writing $\mathscr{F}\mathrm{in}_*$ instead of $N(\mathscr{F}\mathrm{in}_*)$. It should be noted that, given a symmetric monoidal $\infty$-category $\mathcal{C}^\otimes \to \mathscr{F}\mathrm{in}_*$, one typically thinks of $\mathcal{C}^\otimes_{\langle 1 \rangle}$ as having been given a symmetric monoidal structure.
+Here, we make the usual abuse of notation of writing
+$\mathscr{F}\mathrm{in}_*$ instead of
+$N(\mathscr{F}\mathrm{in}_*)$. It should be noted that, given a
+symmetric monoidal $\infty$-category $\mathcal{C}^\otimes \to
+\mathscr{F}\mathrm{in}_*$, one typically thinks of
+$\mathcal{C}^\otimes_{\langle 1 \rangle}$ as having been given a
+symmetric monoidal structure.
+
+\section{Morita Theory}
+
+\subsection{Summary}
+
+\subsubsection{Important definitions}
+\begin{tabulary}{0.7\textwidth}{|C|C|C|}
+\hline
+Term & pg & Loose Definition\\
+\hline
+\hline
+Stable simplicial category & 25 & Simplicial category s.t. the
+                                  associated $\infty$-category is
+                                  stable.\\
+\hline
+Stable spectral category & 25 & Spectral category whose associated
+                                simplicial category is stable.\\
+\hline
+$\Psi_{tri}$ & 24 & Functor $N((Cat_S)^c)[W^{-1}] \rightarrow
+                    N((Set_{\Delta})^c)[W^{-1}] \cong Cat_{\infty}$. 
+                     Induced by the functor $Cat_S \rightarrow
+                    Set_{\Delta}$ given by $A \mapsto \widehat A_{tri}
+                    \mapsto N(\Omega^\infty(A)^{fib})$.\\
+\hline
+$\Psi_{perf}$ & 24 & Same as above, but replace $\widehat A_{tri}$
+                     with $\widehat A_{perf}$.\\
+\hline
+Triangulated equivalence v2 & 30 & A map in the $\infty$-cat of small
+                                   spectral categories
+                                   s.t. $\Psi_{tri}f$ is an
+                                   equivalence of stab $\infty$-cats.\\
+\hline
+Morita equivalence v2 & 30 & $\Psi_{perf}f$ is an equivalence.\\
+\hline
+rep$(B,A)$ & 31 & $\Upsilon(Fun^{ex}(B,A))$, the small pretriangulated
+  spectral category associated to the small stable $\infty$-cat of
+  exact functors from $B$ to $A$.\\
+\hline
+\end{tabulary}
+\subsubsection{Notation}
+\begin{itemize}
+\item $\Upsilon$ is the right adjoint to $\Psi_{tri}$, and via
+  inclusion to $\Psi_{perf}$.
+\end{itemize}
+\subsubsection{Key Results}
+\begin{enumerate}
+\item $\Psi_{tri}$ lands in $Cat^{ex}_{\infty} = $small stable $\infty$-cats.
+\item $\Psi_{perf}$ lands in $Cat^{perf}_{\infty} = $idempotent
+  complete small stable $\infty$-cats.
+\item The $\infty$-category of stable $\infty$-cats is an accessible
+  localization of the $\infty$-cat of spectral categories obtained by
+  inverting the triangulated equivalences. In other words, the functor
+  $\Psi_{tri}$ has a fully faithful and accessible right adjoint $\Upsilon$.
+\item The $\infty$-category of stable idempotent complete $\infty$-cats is an accessible
+  localization of the $\infty$-cat of spectral categories obtained by
+  inverting the Morita equivalences.
+\item The $\infty$-cats $Cat_\infty^{ex}$ and $Cat_\infty^{perf}$ are
+  compactly generated, complete, and cocomplete.
+\item Let $I$ be a small category. Given a diagram $\mc D$ of small
+  stable $\infty$-categories indexed by $N(I)$, there exists and
+  $I$-diagram of pretriangulated spectral categories $\widetilde{\mc D}$
+  lifting $\mc D$.
+\end{enumerate}
+\subsection{Clarifying Remarks}
+\begin{enumerate}
+\item This whole section is basically setting up technical machinery to allow us
+  to lift stable $\infty$-categories to spectral categories and make
+  arguments with these more rigid objects. This is the content of (3)
+  and (4) above. 
+\item Given a small stable idempotent complete $\infty$-category $A$,
+  we have that the conunit of the adjunction $\Psi_{perf}\Upsilon
+  \rightarrow Id$ is a natural equivalence. Thus $A \cong
+  \Psi_{perf}\Upsilon(A) \cong Idem\circ \Psi_{tri}\Upsilon(A)$, and
+  recall that idempotent completion of a small stable $\infty$-cat can
+  be modeled as $A \mapsto Fun^{ex}(A^{op},S_{\infty})^{\omega}$. It
+  is in this sense that small stable idempotent complete
+  $\infty$-categories are $\infty$-categories of modules. 
+\end{enumerate}
+\subsection{Background Material}
+\subsubsection{Accessible Localizations}
+\begin{lemma}
+If a right adjoint is full and faithful, the counit is an isomorphism.
+\end{lemma}
+
+\begin{proof}
+By definition of an adjunction $R \xrightarrow{\eta L} RLR
+\xrightarrow{R\epsilon} R$ is the identity, so that $R\epsilon$ is an
+isomorphism. Thus $\epsilon$ is an isomorphism since $R$ is fully
+faithful. 
+\end{proof}
+
+\begin{remark}
+The analogous result holds in the $\infty$-categorical setting.
+\end{remark}
+
+\begin{definition}
+An $(\infty,1)$-functor $F : C \rightarrow D$ is accessible if $C$ is
+an accessible $(\infty,1)$-category and there is a regular cardinal
+$\kappa$ s.t. $F$ preserves $\kappa$-small filtered colimits.
+\end{definition}
+
+\begin{remark}
+If an $(\infty,1)$-functor between accessible $(\infty,1)$-categories
+has a left or right adjoint $(\infty,1)$-functor, then it is itself
+accessible. 
+\end{remark}
+
+\begin{definition}
+An $(\infty,1)$-functor $L: C \rightarrow C_0$ is called a
+(reflective) localization of the $(\infty,1)$-category $C$ if it has a
+right adjoint $(\infty,1)$-functor $i : C_0 \hookrightarrow C$ that is
+full and faithful.
+\end{definition}
+
+\begin{definition}
+A localization is accessible if the localization functor is an
+accessible functor. 
+\end{definition}
+
 
 \end{document}
