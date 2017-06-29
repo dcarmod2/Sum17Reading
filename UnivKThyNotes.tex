@@ -857,4 +857,129 @@ accessible functor.
 \end{definition}
 
 
+
+\section{Exact Sequences}
+
+\subsection{Summary}
+
+\subsubsection{Important definitions}
+\begin{tabulary}{0.7\textwidth}{|C|C|C|}
+\hline
+Term & pg & Loose Definition\\
+\hline
+\hline
+Verdier quotient $B/A$ & 32 & The cofiber of a fully faithful functor $f : A \rightarrow B$ in $Pr^L_{St}$\\
+\hline
+Exact sequence of presentable stable $\infty$-categories $A \rightarrow B \rightarrow C$ & 34 & The composite is trivial, $A \rightarrow B$ is fully faithful, $B/A \rightarrow C$ is an equivalence.\\
+\hline
+Exact sequence in $Cat_\infty^{ex(\kappa)}$ & 35 & If applying $Ind_\kappa(\_)$ gives an exact sequence in the above sense. \\
+\hline
+Split exact sequence $A \rightarrow B \rightarrow C$ in $Cat_\infty^{ex(\kappa)}$ & 37 & It is exact (in the above sense) and there exist a right adjoint $B \rightarrow A$  with unit of adjunction being a natural iso and a right adjoint $C \rightarrow B$ with counit of adjunction being a natural iso\\
+\hline
+Exact sequence of spectral categories & 38 & If applying $N(\Omega^\infty Mod(\_)^{cf})$ gives an exact sequence of presentable stable $\infty$-categories.\\
+\hline
+$Split(Cat_\infty^{ex})$ and $Split(Cat_\infty^{perf})$ & 39 & Subcategory of $Fun(\Delta^2, Cat_\infty^{ex})$ consisting of split exact sequences. Similarly for the other case. \\
+\hline
+Strict exact sequence of small stable $\infty$-categories & 40 & An exact sequence of the form $A \rightarrow B \rightarrow B/A$ such that $A \rightarrow B$ is the inclusion of a full subcategory and every object of $B$ that is a summand of an object of $A$ is also in $A$. \\
+\hline
+\end{tabulary}
+
+\subsubsection{Notation}
+\begin{itemize}
+\item $Cat_\infty^{ex(\kappa)}$ is the $\infty$-category of $\kappa$-cocomplete stable $\infty$-categories and $\kappa$-small colimit preserving functors.
+\end{itemize}
+
+\subsubsection{Key Results}
+
+\begin{enumerate}
+\item If $A \rightarrow B$ is a fully faithful functor between presentable stable $\infty$-categories, the Verdier quotient $B/A$ is the Bousfield localization $B$ at the class of morphisms whose cones lie in the essential image of $A$. 
+\item Let $A \rightarrow B$ be a fully faithful functor between presentable stable $\infty$-categories. Then $Ho(A)/Ho(B) \rightarrow Ho(A/B)$ is an equivalence. 
+\item A functor between stable $\infty$-categories is fully faithful (\textit{resp.} an equivalence) if and only if the induced functor on the homotopy categories is fully faithful (\textit{resp.} an equivalence). No need to assume presentableness here. 
+\item A sequence in $Cat_\infty^{ex(\kappa)}$ is exact if and only if the induced sequence on homotopy categories is exact in the classical sense. 
+\item This proposition will be used later for the construction of nonconnective $K$-theory : let $A \rightarrow B \rightarrow C$ be an exact sequence of small stable $\infty$-categories. Then for any infinite regular cardinal $\kappa$, $Ind(A)^\kappa \rightarrow Ind(B)^\kappa \rightarrow Ind(C)^\kappa$ is an exact sequence of idempotent complete small stable $\infty$-categories.
+\item $Split(Cat_\infty^{perf})$ is accessible. 
+\item Any split exact sequence is equivalent to a strict exact sequence.
+\end{enumerate}
+
+\subsection{Clarifying Remarks}
+
+\begin{enumerate}
+\item In this section, a $\kappa$-continuous functor is defined to be one that preserves $\kappa$-filtered colimits. 
+\item A fully faithful functor of stable $\infty$-categories descend to a fully faithful triangulated functor on their homotopy categories. 
+\end{enumerate}
+
+\subsection{Background Material}
+
+\subsubsection{Classical notion of exactness}
+
+\begin{remark}
+All categories and functors we consider here are triangulated. 
+\end{remark}
+
+\begin{definition}
+A sequence of functors $A \rightarrow B \rightarrow C$ is exact if the composite is zero, $A \rightarrow B$ is fully faithful, and the induced functor on the Verdier quotient $B/A \rightarrow C$ is cofinal. 
+\end{definition}
+
+\begin{definition}
+If $A$ is a triangulated subcategory of $B$, then the Verdier quotient $B/A$ is the universal triangulated category with a functor $B \rightarrow B/A$ such that every object of $A$ is isomorphic to 0 under the functor. 
+\end{definition}
+
+\begin{definition}
+A functor $C' \rightarrow C$ is cofinal if it becomes an equivalence after idempotent completion. Equivalently, if every object of $C$ is a summand of an object in the image. 
+\end{definition}
+
+\section{Additivity}
+
+\subsection{Summary}
+
+\subsubsection{Important definitions}
+\begin{tabulary}{0.9\textwidth}{|C|C|C|}
+\hline
+Term & pg & Loose Definition\\
+\hline
+\hline
+Additive invariant $E : Cat_\infty^{ex} \rightarrow D$ & 41 & A functor where $D$ is a stable presentable $\infty$-category, such that it inverts Morita equivalence (in the sense of Section 2), preserves filtered colimits, and is additive : every split exact sequence $A \rightarrow B \rightarrow C$ induces an equivalence $E(A) \wedge E(C) \simeq E(B)$\\
+\hline
+\end{tabulary}
+
+\subsubsection{Notation}
+\begin{itemize}
+\item $Fun_{add}(Cat_\infty^{ex},D)$ is the $\infty$-category of additive invariants with values in $D$. 
+\item $Pre((Cat_\infty^{perf})^\omega)_*$ is the $\infty$-category $Fun(((Cat_\infty^{perf})^{\omega})^{op}, \mathcal{T}_{\infty,*})$, presheaves of pointed spaces. 
+\item $\phi : Cat_\infty^{perf} \rightarrow Pre((Cat_\infty^{perf})^\omega)_*$ is defined by first applying the Yoneda embedding and then restricting the domain to $(Cat_\infty^{perf})^\omega$
+\item $\mathcal{M}^{un}_{add}$ is the localization of $Pre((Cat_\infty^{perf})^\omega)_*$ with respect to the maps $\phi(B)/\phi(A) \rightarrow \phi(C)$ where $A \rightarrow B \rightarrow C$ is an element of a fixed set of representatives of split exact sequences in $(Cat_\infty^{perf})^\omega$. Let $\gamma$ denote the localization functor. 
+\item $\mathcal{U}^{un}_{add}$ is the composite :
+$$Cat_\infty^{ex} \overset{Idem(\_)}{\rightarrow} Cat_\infty^{perf} \overset{\phi}{\rightarrow} Pre((Cat_\infty^{perf})^\omega)_* \overset{\gamma}{\rightarrow} \mathcal{M}^{un}_{add}$$
+\item $\mathcal{M}_{add}$ is the stabilization of $\mathcal{M}^{un}_{add}$. Recall this is obtained by taking the category of spectrum objects in $\mathcal{M}^{un}_{add}$. 
+\item $\mathcal{U}_{add}$ is the composite
+$$Cat_\infty^{ex} \overset{\mathcal{U}^{un}_{add}}{\rightarrow} \mathcal{M}^{un}_{add} \overset{\Sigma^{\infty}}{\rightarrow} \mathcal{M}_{add}$$
+\end{itemize}
+
+\subsubsection{Key Results}
+
+\begin{enumerate}
+\item ``Unstable universal additive invariant" : The functor $\mathcal{U}^{un}_{add}$ inverts Morita equivalences, preserves filtered colimits and sends split exact sequences to cofiber sequences. Moreover, $\mathcal{U}^{un}_{add}$ is universal with respect to these properties. For any presentable pointed $\infty$-category $D$, there is an equivalence of $\infty$-categories
+$$Fun^L(\mathcal{M}^{un}_{add}, D) \simeq Fun^{un}_{add}(Cat_\infty^{ex},D)$$
+where the RHS denotes the full subcategory of $Fun(Cat_\infty^{ex},D)$ of functors with the above listed properties. 
+\item ``Stable universal additive invariant" : $\mathcal{U}_{add}$ is the unviersal additive invariant. Given any presentable stable $\infty$-category $D$, there is an equivalence of $\infty$-categories
+$$Fun^L(\mathcal{M}_{add},D) \simeq Fun_{add}(Cat_\infty^{ex},D)$$
+\end{enumerate}
+
+\subsection{Clarifying Remarks}
+
+\begin{enumerate}
+\item Examples of additive invariants : analogues of algebraic $K$-theory and topological Hochschild cohomology. They will be constructed in later sections. 
+\item There is an alternate description of the $\mathcal{M}_{add}$ by stablizing spaces first :
+\begin{eqnarray*}
+Stab(Pre((Cat_\infty^{perf})^\omega)_*) & = & Stab(Fun(((Cat_\infty^{perf})^{\omega})^{op}, \mathcal{T}_{\infty*,}))\\
+& \simeq & Fun(((Cat_\infty^{perf})^{\omega})^{op}, Stab(\mathcal{T}_{\infty,*}))\\
+& \simeq & Fun(((Cat_\infty^{perf})^{\omega})^{op}, S_\infty)\\
+\end{eqnarray*}
+So there is a natural functor $\psi : Cat_\infty^{perf} \rightarrow Stab(Pre((Cat_\infty^{perf})^\omega)_*)$. Then $\mathcal{M}_{add}$ can be described as the localization of $Stab(Pre((Cat_\infty^{perf})^\omega)_*)$ at $\psi(A)/\psi(B) \rightarrow \psi(C)$ for all split exact sequence representatives we considered earlier. 
+\end{enumerate}
+
+\subsection{Background Material}
+
+It may be helpful to look at Chapter 1 Section 4 of \href{References/LurieHigherAlgebra.pdf}{HA} for details about stabilization and spectrum objects. 
+
 \end{document}
