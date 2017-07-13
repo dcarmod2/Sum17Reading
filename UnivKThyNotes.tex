@@ -938,7 +938,7 @@ A functor $C' \rightarrow C$ is cofinal if it becomes an equivalence after idemp
 Term & pg & Loose Definition\\
 \hline
 \hline
-Additive invariant $E : Cat_\infty^{ex} \rightarrow D$ & 41 & A functor where $D$ is a stable presentable $\infty$-category, such that it inverts Morita equivalence (in the sense of Section 2), preserves filtered colimits, and is additive : every split exact sequence $A \rightarrow B \rightarrow C$ induces an equivalence $E(A) \wedge E(C) \simeq E(B)$\\
+Additive invariant $E : Cat_\infty^{ex} \rightarrow D$ & 41 & A functor where $D$ is a stable presentable $\infty$-category, such that it inverts Morita equivalence (in the sense of Section 2), preserves filtered colimits, and is additive : every split exact sequence $A \rightarrow B \rightarrow C$ induces an equivalence $E(A) \vee E(C) \simeq E(B)$\\
 \hline
 \end{tabulary}
 
@@ -981,5 +981,352 @@ So there is a natural functor $\psi : Cat_\infty^{perf} \rightarrow Stab(Pre((Ca
 \subsection{Background Material}
 
 It may be helpful to look at Chapter 1 Section 4 of \href{References/LurieHigherAlgebra.pdf}{HA} for details about stabilization and spectrum objects. 
+
+\section{Connective $K$-Theory}
+
+\subsection{Summary}
+
+\subsubsection{Important definitions}
+\begin{tabulary}{\textwidth}{|C|C|C|}
+\hline
+Term & pg & Loose Definition\\
+\hline
+\hline
+Gap$([n],\mc C)$ (Waldhausen construction)  & 44 & Full subcat of $Fun(N(Ar[n]),\mc C)$ spanned
+                        by $F$ s.t. $F(i,i) = 0$
+                        and if $i < j < k$, then $F(j,k) =
+                        p.o. (F(j,j) \leftarrow F(i,j) \rightarrow F(i,k))$.\\
+\hline
+
+
+\end{tabulary}
+
+\subsubsection{Notation}
+\begin{itemize}
+\item Ar$[n]$ is the  category of arrows in $[n]$.
+
+\item $S^\infty_{\bullet} \mc C$  is the  simplicial $\infty$-cat defined by
+                                  $S_n^\infty \mc C = Gap([n],\mc
+                                  C)$.
+
+\item $\Omega |(S^\infty_{\bullet} \mc C)_{iso}|$  is  the
+                                                   $\infty$-categorical
+                                                   version of
+                                                   Waldhausen's
+                                                   $K$-theory
+                                                   space. Here iso
+                                                   means core. 
+
+\item $(S_{\bullet}^\infty)^n$  is  the $n$th iteration of the
+                                $S_{\bullet}$ construction. Makes sense
+                                because the output is a pted
+                                $\infty$-cat with fintie colimts. 
+
+
+\item $|((S_{\bullet}^\infty)^n(\mc C))_{iso}|$  denotes  the levels of the
+                                                 Waldhausen $K$-theory
+                                                 spectrum. 
+\item Given a small stable $\infty$-cat $\mc A$, $K^\omega_{\mc A}$
+  is the object
+\[
+\mc B \mapsto |(S_{\bullet}^\infty (Fun^{ex}(\mc B, Idem(\mc A))))_{iso}|
+\]
+in $Pre((Cat_{\infty}^{perf})^{\omega})_*$ and $K_{\mc A}$ is the
+object
+\[
+\mc B \mapsto K(Fun^{ex}(\mc B,Idem(\mc A)))
+\]
+in $Pre_{S_{\infty}}((Cat_{\infty}^{perf})^{\omega})$. 
+\end{itemize}
+\subsubsection{Key Results}
+\begin{enumerate}
+\item Let $\mc C$ be an $\infty$-category with finite colimits. Then
+  for each $n$, the forgetful functor
+\[
+Gap([n],\mc C) \rightarrow Fun(\Delta^{1,2,\dots,n},\mc C)
+\]
+is an equivalence of $\infty$-categories (and $\Delta^{1,2,\dots,b}
+\approx N([n-1])$).
+\item Let $\mc A$ be a combinatorial simplicial model category and $C
+  \subset \mc A$ a full subcategory. Then for each $n$, the induced
+  map
+\[
+N(C^{Ar[n]})^{cf}) \rightarrow Fun(N(Ar[n]),N(C^{cf}))
+\]
+is a categorical equivalence of simplicial sets.
+
+\item Let $\mc A$ be a simplicial model category and $C \subset \mc A$
+  a small full subcategory of the cofibrants which admits all homotopy
+  pushouts and is a Waldhausen category via the model structure on
+  $\mc A$. Then there is an equivalence of spectra
+\[
+K(C) \cong K(N((C)^{cf}))
+\]
+which is natural is weakly exact functors. 
+
+
+\item A corollary of the above is: Let $\mc C$ be a small
+  pretriangulated spectral category and let $\mc M_C$ denote the
+  category of perfect $\mc C$-modules with its Waldhausen structure
+  induced by the model structure on $\mc C$-modules. Then there is an
+  isomorphism in the stable category
+\[
+K(\mc M_C) \cong K(\psi_{perf}\mc C).
+\]
+
+This is key because every category in $Cat_{\infty}^{perf}$ is
+equivalent to $\psi_{perf}\mc C$ for some spectral category $\mc C$ by
+section 4 results.
+\item The algebraic $K$-theory functor
+\[
+K : Cat_{\infty}^{perf} \rightarrow S_{\infty}
+\]
+is an additive invariant.
+\item Let $\mc A$ be a small stable $\infty$-category and $\mc B$ be a
+  compact idempotent-complete small stable $\infty$-category. Then
+  there is a natural equivalence of spectra
+\[
+Map(\mc U_{add}(\mc B),\mc U_{add}(\mc A)) \cong K(Fun^{ex}(\mc
+B,Idem(\mc A))).
+\]
+When $\mc B$ is the small stable $\infty$-cat $S^\omega_{\infty}$ of
+compact spectra, there is a natural equivalence of spectra
+\[
+Map(\mc U_{add}(S^\omega),\mc U_{add}(\mc A)) \cong K(Idem(\mc A)).
+\]
+In particular, we have isomorphisms of abelian groups
+\[
+Hom(\mc U_{add}(S^\omega_{\infty}),\Sigma^{-n}\mc U_{add}(\mc A))
+\cong K_n(Idem(\mc A))
+\]
+in the triangulated category $Ho(\mc M_{add})$.
+\item Let $\mc A$ be a small stable $\infty$-category. Then, we have a
+  natural equivalence $\Sigma (\mc U^{un}_{add}(\mc A)) \cong K_{\mc
+    A}^{\omega}$ in $\mc M_{add}^{un}$ and a natural equivalence $\Sigma
+  \mc U_{add}(\mc A) \cong \Sigma K_{\mc A}$ in $\mc M_{add}$.
+\item Let $\mc A$ be a small stable $\infty$-category. Then the
+  presheaves $K_{\mc A}^{\omega}$ and $K_{\mc A}$ are local,
+  i.e. given any split exact sequence $\mc B \rightarrow \mc C
+  \rightarrow \mc D$ in $\mc E$, the induced maps of spectra
+\[
+map(\phi(\mc D),K_{\mc A}^\omega) \xrightarrow{\sim} Map(\phi(\mc
+C)/\phi(\mc A), K_{\mc A}^\omega)
+\]
+\[
+map(\psi(\mc D),K_{\mc A}) \xrightarrow{\sim} Map(\psi(\mc
+C)/\psi(\mc A), K_{\mc A}^\omega)
+\]
+are equivalences. 
+\end{enumerate}
+\subsection{Clarifying Remarks}
+\begin{itemize}
+\item The structure maps in the $K$-theory spectrum $S^1 \wedge
+  (C_{iso}) \rightarrow |(S_{\bullet}^\infty \mc C)_{iso}|$ are given
+  by the following facts: 
+\begin{enumerate}
+\item$Gap([1],\mc C)$ is equivalent to $\mc C$
+\item $Gap([0], \mc C)$ is equivalent to $pt$
+\item The realization of a simplicial space  $K_n$ whose 0-simplices are a
+  point contains a copy of $S^1 \wedge K_1$ (just think about the
+  formula, we product with an interval, then crush the two ends).
+\end{enumerate}
+\item The corepresentability of $K$-theory says that, as a functor
+  $Cat_{\infty}^{perf} \rightarrow S_{\infty}$, $K$ is equivalent to
+  the composite functor $Map(U_{add}(S_\infty^\omega), -) \circ U_{add}$. In
+  particular, under the equivalence $(U_{add})^* : Fun^L(\mc
+  M_{add},S_\infty) \xrightarrow{\sim} Fun_{add}(Cat_\infty^{perf},S_\infty)$,
+  we can think of $K$ as the colimit preserving functor
+  $Map(U_{add}(S_\infty^\omega),-) : \mc M_{add} \rightarrow
+  S_\infty$. Note that I'm restring to idempotent complete categories
+  because I don't want to add the idempotent completion functor to the
+  composite above. 
+\item To summarize the results of this section: $K$ theory is an
+  additive invariant valued in spectra. Thus, it corresponds to a
+  colimit preserving functor $\mc M_{add} \rightarrow S_{\infty}$. The
+  functor corresponding to $K$ is the representable functor $Map(U_{add}(S^\omega_\infty),-)$.
+\end{itemize}
+\subsection{Background Material}
+
+\subsubsection{Arrow Categories}
+
+See \href{References/quasicats.pdf}{Charles' Notes} section 7.6 for a
+description of the twisted arrow category, and note the remark just
+before 7.7: we have to consider spans such that all squares in the
+span are pullback squares if we want a quasi-category.   
+
+To get the arrow category from the twisted arrow category, we just
+flip all the arrows pointing left. Once we've done this, it's pretty
+clear pictorially what the nerve will be. We'll do this process in an
+example below:
+
+The category $[2]^{tw}$ can be visualized as:
+
+\[
+\xymatrix{ & & 02 \ar[dr] \ar[dl] & & \\ & 01 \ar[dl] \ar[dr]& &12
+  \ar[dr]\ar[dl] & \\ 00& & 11& & 22}.
+\]
+
+Now we flip the arrows pointing left to obtain $Ar([2])$:
+
+
+\[
+\xymatrix{ & & 02 \ar[dr]  & & \\ & 01 \ar[ur] \ar[dr]& &12
+  \ar[dr] & \\ 00 \ar[ur] & & 11 \ar[ur]& & 22}.
+\]
+
+Filling in the composites, we get
+
+\[
+\xymatrix{ & & 02 \ar[dr]  & & \\ & 01 \ar[rr]\ar[ur] \ar[dr]& &12
+  \ar[dr] & \\ 00 \ar[rr] \ar[ur] & & 11 \ar[rr] \ar[ur]& & 22}.
+\]
+
+making it more or less clear what the non-degenerate simplices of
+$N(Ar[2))$ are. 
+
+Now a functor out of this category can be written as: 
+\[
+\xymatrix{ & & X_{02} \ar[dr]  & & \\ & X_{01} \ar[ur] \ar[dr]& & X_{12}
+  \ar[dr] & \\ X_{00} \ar[ur] & & X_{11} \ar[ur]& & X_{22}}.
+\]
+
+When we define $Gap([2],\mc C)$, we have the additional requirements
+that the middle square is cocartesian and that $X_{00},X_{11},X_{22}$
+are the zero object. In particular, up to a contractible space of
+choices, the only data we need to specify
+is $X_{01} \rightarrow X_{02}$. Mapping such a functor to the functor
+obtained by restricting to the subcategory $01 \rightarrow 02$ yields
+a map $Gap([2],\mc C) \rightarrow Fun(\Delta^{1,2},\mc C)$ which is
+intuitively an equivalence. 
+
+\subsubsection{$K$-theory via group completion}
+
+This is from
+\href{References/CategoriesAndCohomologyTheories.pdf}{Segal}. Given a
+$\Gamma$-space $A$ (see the background material of section 3 above), we
+can associate to it a spectrum with component spaces $A(1), BA(1),
+B^2A(1), \dots $, where $1$ is the set $\{1\}$, and $BA$ is the
+$\Gamma$ space s.t. for any finite set $S$, $BA(S)$ is the realization
+of the $\Gamma$-space $T \mapsto A(S \times T)$. The key here is that
+$B(-)$ of a $\Gamma$-space is again a $\Gamma$ space, so that we can
+iterate the construction. 
+
+The important example to keep in mind is the $\Gamma$-space $A$ which
+is $A(1) = \coprod BGL_n$, $A(2) = \coprod_{n \geq 0} (EG_m \times
+EG_n \times EG_{m+n})/(G_m \times G_n) , \dots$.
+
+One important remark in the paper is that an $H$-space $X$ has a
+homotopy inverse if it's grouplike and it has a numerable covering by
+sets which are contractible in $X$. The realization of a simplicial
+space has such a numerable covering if the space of $0$-simplices is
+contractible. 
+
+Now $BA(1)$ is the realization of $A$, and by definition of a
+$\Gamma$-space, $A_0$ is contractible. Thus the product on $B^kA(1)$
+has a homotopy inverse for any $k \geq 1$, and hence (by prop 1.4 in
+the paper), $B^kA(1) \rightarrow \Omega B^{k+1}A(1)$ is a homotopy
+equivalence. Thus the spectrum we formed above is ALMOST an
+$\Omega$-spectrum, but it isn't necessarily true that $A(1)\rightarrow
+\Omega BA(1)$ is an equivalence. The spectrification of this
+prespectrum will be given by $\Omega BA(1), BA(1), B^2A(1),\dots $, so
+we'd like to know what the precise relationship between $\Omega BA(1)$
+and $A(1)$ is. Indeed, this is asking for the comparison between the
+monoid $[X,A(1)]$ and the zeroth cohomology group $[X,\Omega
+BA(1)]$. Indeed, going back to our above example, we see that
+$[X,A(1)]$ should be the monoid of vector bundles, so we'd hope that
+$\Omega BA(1)$ would be the group completion of this monoid. The
+upshot is that in nice cases (the ones we care about) this is true. 
+
+In
+particular, given a $\Gamma$-spaces $A$, one can naturally associate
+another $\Gamma$-space $A'$ with a map $A \rightarrow A'$ with the
+following properties:
+\begin{itemize}
+\item $\pi_0(A')$ is the abelian group associated to the monoid
+  $\pi_0(A)$; and
+\item $BA \rightarrow BA'$ is a weak equivalence of spectra. 
+\end{itemize}
+
+\subsubsection{Chunks}
+\begin{definition}
+Say that a model category $\mc S$ is \emph{excellent} if it is
+equipped with a symmetric monoidal structue and satisfies the
+following conditions:
+\begin{enumerate}
+\item The model category $\mc S$ is combinatorial.
+\item Every monomorphism in $\mc S$ is a cofibration, and the
+  collection of cofibrations is stable under products.
+\item THe collection of weak equivalences in $\mc S$ is stable under
+  filtered colimits.
+\item The monoidal structure on $\mc S$ is compatible with the model
+  structure. In other words, the tensor product functor $\otimes : \mc
+  S \times \mc S \rightarrow \mc S$ is a left Quillen bifunctor.
+\item The monoidal model category $\mc S$ satisfies the invertibility
+  hypothesis. 
+\end{enumerate}
+
+\begin{remark}
+The invertibility hypothesis essentially says that inverting a
+morphism $f$ in an $\mc S$-enriched category $C$ does not change the
+homotopy type of $C$ when $f$ is already invertible up to homotopy. 
+\end{remark}
+\begin{example}
+The canonical example is the category of simplicial sets when endowed
+with the Kan model structure and cartesian product. 
+\end{example}
+\end{definition}
+\begin{definition}
+Let $\mc S$ be an excellent model category, and let $A$ be combinatorial
+$\mc S$-enriched model category. A \emph{chunk} of $\mc A$ is a full
+subcategory  $ \mc U \subset \mc A$ with the following properties:
+\begin{enumerate}
+\item Let $A$ be an object of $\mc U$ and let $\{\phi_i : A
+  \rightarrow B_i\}_{i \in I}$ be a finite collection of morphisms in
+  $\mc U$. Then there exists a factorization
+\[
+A \xrightarrow{p} \overline A \xrightarrow{q} \prod_{i \in I} B_i
+\]
+of the product map $\prod_{i \in I} \phi_i$, where $p$ is a trivial
+cofibration, $q$ is a fibration, and $\overline A \in \mc
+U$. Moreover, this factorization can be chosen to depend functorially
+on the collection $\{\phi_i\}$ via an $\mc S$-enriched functor.
+\item Let $A$ be an object of $\mc U$ and let $\{\phi_i : B_i
+  \rightarrow A\}_{i \in I}$ be a finite collection of morphisms in
+  $\mc U$. Then there exists a factorization
+\[
+\coprod_{i \in I} B_i \xrightarrow{p} \overline A \xrightarrow{q} A
+\]
+of the coproduct map $\coprod_{i \in I} \phi_i$, where $p$ is a
+cofibration, $q$ is a trivial fibration, and $\overline A \in \mc
+U$. Moreover, this factorization can be chosen to depend functorially
+on the collection $\{\phi_i\}$ via an $\mc S$-enriched functor. 
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Let $\mc S$ be an excellent model category, $\mc A$ a combinatorial
+$\mc S$-enriched model category, and $C$ an $\mc S$-enriched
+category. We will say that a full subcategory $\mc U \subset \mc A$ is
+a $C$-chunk of $\mc A$ if it is a chunk of $\mc A$ and the subcategory
+$\mc U^C$ is a chunk of $\mc A^C$. Here we regards $\mc A^C$ as
+endowed with the projective model structure. 
+\end{definition}
+
+The main theorem about chunks is the following ridigification theorem:
+
+\begin{theorem}(HTT 4.2.4.4)
+Let $S$ be a small simplicial set, $\mc C$ a small simplicial
+category, and $u : \mathfrak C[S] \rightarrow \mc C$ an
+equivalence. Suppose that $\mathbf{A}$ is a combinatorial simplicial
+model category and let $\mc U$ be a $\mc C$-chunk of
+$\mathbf{A}$. Then the induced map
+\[
+N((\mc U^{\mc C})^{\circ}) \rightarrow Fun(S,N(\mc U^{\circ}))
+\]
+is a categorical equivalence of simplicial sets. 
+\end{theorem}
+
+This is a rigidification in the sense that the category on the left is
+the nerve of a category of honest (simplicial) functors.
 
 \end{document}
