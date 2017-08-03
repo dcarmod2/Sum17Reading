@@ -1338,4 +1338,318 @@ is a categorical equivalence of simplicial sets.
 This is a rigidification in the sense that the category on the left is
 the nerve of a category of honest (simplicial) functors.
 
+\section{Localization}
+
+\subsection{Summary}
+\subsubsection{Important definitions}
+\begin{tabulary}{0.9\textwidth}{|C|C|C|}
+\hline
+Term & pg & Loose Definition\\
+\hline
+\hline
+Localizing invariant $E : Cat_\infty^{ex} \rightarrow D$ & 41 & A
+                                                                functor
+                                                                where
+                                                                $D$ is
+                                                                a
+                                                                stable
+                                                                presentable
+                                                                $\infty$-category,
+                                                                such
+                                                                that
+                                                                it
+                                                                inverts
+                                                                Morita
+                                                                equivalences
+                                                               ,
+                                                                preserves
+                                                                filtered
+                                                                colimits,
+                                                                and
+                                                                satisfies
+                                                                localization:
+                                                                every
+                                                                exact
+                                                                sequence
+                                                                $A
+                                                                \rightarrow
+                                                                B
+                                                                \rightarrow
+                                                                C$
+                                                                becomes
+                                                                a
+                                                                cofiber
+                                                                sequence
+                                                                $E(A) \rightarrow E(B) \rightarrow E(C)$\\
+\hline
+\end{tabulary}
+\subsubsection{Notation}
+\begin{itemize}
+\item $\kappa$ is an infinite regular cardinal larger than $\omega$.
+\item $(Cat_\infty^{ex})^\kappa$ will denote the category of
+  $\kappa$-compact small stable $\infty$-categories.
+\end{itemize}
+\subsubsection{Key Results}
+\begin{itemize}
+\item There's a category $M_{loc}$ and a functor $U_{loc} :
+  Cat_\infty^{ex} \xrightarrow M_{loc}$ such that, given any stable
+  presentable $\infty$-category $D$, there's an equivalence of
+  $\infty$-categories
+\[
+(U_{loc})^* : Fun^L(M_{loc},D) \xrightarrow{\sim} Fun_{loc}(Cat_{\infty}^{ex},D).
+\]
+\end{itemize}
+\subsection{Clarifying Remarks}
+See background material
+\subsection{Background Material}
+
+\subsubsection{Localization Theorems}
+\begin{definition}
+Define $K(X \text{ on } Z)$ to be the $K$-theory space of the
+Waldhausen category $Ch_{perf,Z}(X)$ of perfect complexes on $X$ which
+are exact on $U$. 
+\end{definition}
+
+\begin{theorem} (Thomason-Trobaugh localization)
+
+Let $X$ be a quasi-compact, quasi-separated scheme, and let $U$ be a
+quasi-compact open in $X$ with complement $Z$. Then $K(X \text{ on }
+Z) \rightarrow K(X) \xrightarrow{j^*} K(U)$ is ALMOST a homotopy fibration,
+and there is a long exact sequence
+\[
+K_{n+1}(U) \xrightarrow{\partial} K_n(X \text{ on } Z) \rightarrow
+K_n(X) \rightarrow K_n(U) \rightarrow \dots
+\]
+ending in
+\[
+K_0(X \text{ on } Z) \rightarrow K_0(X) \rightarrow K_0(U).
+\]
+Because the map $K_0(X) \rightarrow K_0(U)$ is not surjective in
+general, this can't be an honest homotopy fibration. 
+\end{theorem}
+
+Here the $K$-theory of a scheme $X$ is the $K$-theory of
+$Ch_{perf}(X)$. Because $X$ assumed to be quasi-compact, the inclusion
+$Ch^b_{perf}(X) \subset Ch_{perf}(X)$ induces an equivalence on
+derived categories, so that the $K$-theory of $X$ is $K(Ch^b_{perf}(X))$.
+
+Non-connective $K$-theory exists to rectify the ``almost'' in the
+theorem above. 
+
+Next we'll discuss Neeman's generalization of this theorem. First
+there's a notion of $K$-theory for triangulated categories such that,
+if $A$ is an abelian category and $D^b(A)$ is its bounded derived
+category, then $K(D^b(A))$ agrees with $K(A)$ (a consequence of the ``theorem of the heart'').
+
+Here's the (somewhat lengthy) theorem of Neeman, note that in the
+original source, Neeman uses
+the French word \'epaisse (which means thick) for thick subcategories:
+
+\begin{theorem} (Neeman)
+Suppose $S$ is any triangulated category closed with respect to
+arbitrary coproducts. Suppose that the subcategory $S^c$ of
+$(\omega-$) compact objects is small, and that $S$ is the smallest
+localizing subcategory containing $S^c$. Suppose furthermore that
+there is a set $R$ of objects in $S^c$, and $\mc R$ is the smallest
+localizing category containing $R$. Let $T$ be the quotient category
+$S/\mc R$. Then the map $\mc R \rightarrow S$ carries $\mc R^c$ to
+$S^c$, the map $S \rightarrow T$ carries $S^c$ to $T^c$, the natural
+functor $S^c/\mc R^c \rightarrow T^c$ is fully faithful, and $T^c$ is
+the thick closure of the image.
+\end{theorem}
+
+What in the blazes does this have to do with the TT localization
+theorem? Let $S = D(X), T = D(U), \mc R = D(X \text{ on } Z)$ where
+$D$ here means the derived category of the abelian category of
+quasi-coherent sheaves. Passing to the compact objects will yield the
+perfect complexes, which is what we want to take the $K$-theory of. By
+the theorem of the heart and Quillen's localization theorem, there's a
+homotopy fibration sequence $K(\mc R^c)\rightarrow K(S^c) \rightarrow
+K(S^c/\mc R^c)$. However, the theorem above states that, although
+$S^c/\mc R^c \neq T^c$ in general, they're very closely related.
+
+To make more precise how closely related the two are, we need one more lemma:
+
+\begin{lemma}
+Suppose $T$ is a triangulated category, and $S$ is a full triangulated
+subcategory whose thick closure is all of $T$. Then a delooping of the
+map $K(S) \rightarrow K(T)$ is a covering space, and is a homotopy
+equivalence if and only if $S \cong T$, i.e. the inclusion $S
+\hookrightarrow T$ is an equivalence of categories. 
+\end{lemma}
+
+Now in our case, we can apply this theorem to the inclusion $S^c/\mc
+R^c$ as above to see that there's an isomorphism $\pi_n\Sigma K(S^c/\mc
+R^c)\cong \pi_n \Sigma K(T^c)$ for all $n \geq 2$, which by stability
+yields an isomorphism $\pi_n K(S^c/\mc R^c) \cong \pi_n K(T^c)$ for
+all $n \geq 1$. This recovers the TT-localization theorem as stated
+above. 
+
+\subsubsection{Negative $K$-theory (Notes from Jeremiah's Talk)}
+\begin{remark}
+Notation: $K(-)$ is the connective $K$-theory spectrum, and $\mbb
+K(-)$ is the non-connective $K$-theory spectrum. 
+\end{remark}
+
+\begin{theorem}
+There's a LES of $K$-groups
+\[
+\xymatrix{ \cdots \ar[r] & K_{n+1}(\mbb Q) \ar[r] & \bigoplus_{p} K_n(\mbb F_p) \ar[r] &
+  K_n(\Z) \ar[r] & K_n(\mbb Q) \ar[r] & \dots}
+\]
+
+Thanks to hard work about $K$ theory of fields, gives lots of
+information about $K_*(\Z)$.
+\end{theorem}
+
+This theorem is (non-trivially) a special case of:
+
+\begin{theorem} (Quillen)
+Given $B \subset A$ a Serre subcategory of a small abelian category,
+then we have a cofiber sequence of spectra
+\[
+K(B) \rightarrow K(A) \rightarrow K(A/B).
+\]
+
+Note that in particular, $K_0(A) \twoheadrightarrow K_0(A/B)
+\rightarrow 0$.
+\end{theorem}
+
+\begin{remark}
+This is a premier computational tool. However, not all $K$-groups are
+equivalent to $K$-groups of some abelian category. Notably, $K_*$ of a
+singular scheme, $K_*$ of a ring spectrum, etc. 
+\end{remark}
+
+\begin{remark}
+If $A \rightarrow B \rightarrow C$ is an exact sequence in
+$Cat_{\infty}^{perf}$, it's not true in general that
+\[
+K_0(B) \rightarrow K_0(C) \rightarrow 0
+\]
+is exact. This is the first obstruction to a localization sequence. 
+\end{remark}
+
+\begin{question}
+Is there an easy counterexample? I think possibly a singular cubic
+will work. 
+\end{question}
+
+Fix: Negative $K$-theory.
+
+\begin{theorem}
+If $A \rightarrow B \rightarrow C$ is an exact sequence in
+$Cat_{\infty}^{ex}$, then 
+\[
+\mbb K(A) \rightarrow \mbb K(B) \rightarrow \mbb K(C)
+\]
+is a cofiber sequence.
+\end{theorem}
+
+\begin{construction}
+Idea: Want to find a $C'$ s.t. $K(C') \cong *$ and a map $C
+\rightarrow C'$. Expect exact sequence
+\[
+\xymatrix{K_0(C') \ar[r] & K_0(C'/C) \ar[r] & K_{-1}(C) \ar[r] & K_{-1}(C')}
+\]
+but since $K_*(C') = 0$, just define $K_{-1}(C) = K_0(C'/C)$. Should
+be functorial: $C' = \mc F(C)$. Let $\Sigma C = cofib(C \rightarrow
+F(C))$, then $K_{-n}(C) = K_0(\Sigma^{(n)}C)$.
+\end{construction}
+
+\begin{definition}
+Say $C$ is \emph{flasque} if there are exact functors $F_1,F_2 : C
+\rightarrow C$ and equivalence
+\[
+id \oplus F_1 \cong F_2,
+\]
+and $(F_1)_* = (F_2)_* : K_*(C) \rightarrow K_*(C)$. 
+
+
+\end{definition}
+
+Then $id +
+(F_1)_* : K_*(C) \rightarrow K_*(C) \implies K_*(C) = 0$.
+
+\begin{example}
+\begin{enumerate}
+\item $Ind_\kappa(C)$, $\kappa > \omega$.
+\item $F = (x \mapsto \oplus_{\mbb N} x)$. Then $id \oplus F \cong F$,
+  the Eilenberg-swindle, so $Ind_\kappa(\mc C)$ is $\kappa$-acyclic. 
+\item A ring $R$ is flasque if there's an $R$-bimodule $M$ which is
+  f.g. projective as a right $R$-mod, and there's a bimodule
+  isomorphism $R\oplus M \cong M$. Then $Mod_R, Proj_R$ are flasque. 
+\item $S$ any ring, $C(R) \subseteq End_S(S^\infty)$ row-finite
+  column-finite infinite matrices (the cone ring). This is flasque. 
+\item The suspension ring $\Sigma S = C(S)/M(S)$, where $M(S)$ denotes
+  the ring of finite matrices. Then $K_{-n}(S) = K_0(\Sigma^{(n)} S)$.
+\end{enumerate}
+\end{example}
+
+\begin{remark}
+This construction works just fine for connective ring spectrum. 
+\end{remark}
+
+\begin{construction}
+Model for $K$-theory of connective rings: 
+
+Can define
+
+\[
+\xymatrix{GL_n(R) \ar[r]\ar[d] & M_n(R) \ar[d] \\ GL_n(\pi_0R) \ar[r]
+  & M_n(\pi_0R)}
+\]
+
+Fact: $K_0(R) \cong K_0(\pi_0 R)$. Here the $K$-theory of a ring
+spectrum is the $K$-theory of the category of compact projective $R$-mods.
+Define $K_*(R) := \pi_*[K_0(\pi_0R) \times BGL(R)^+]$.
+
+Have a map $K_*(R) \rightarrow K_*(\pi_0(R))$. Compare the ``ring
+suspensions'':
+
+have $\pi_0(\Sigma_{ring} R) = \Sigma_{ring} \pi_0R$, so 
+
+\[
+\xymatrix{K_{-1}(R) \ar[r]\ar[d] & K_0(\Sigma_{ring}R)
+\ar[d]\\K_{-1}(\pi_0R) \ar[r] &K_0(\pi_0\Sigma_{ring}R)}
+\]
+
+Upshot: $K_{-n}(R) = K_{-n}(\pi_0R)$ for $R$ connective. 
+\end{construction}
+
+\begin{definition}
+$C \in Cat_{\infty}^{ex}$. Define $\mc F_k(C) = Ind_\kappa(C)$,
+$\Sigma_\kappa C = \mc F_\kappa (C)/C$, $K_{-n}(C) =
+K_0(\Sigma_\kappa^{(n)} C)$, $\mbb K(C) = \colim_n \Omega^n
+K(\Sigma^{(n)}_\kappa C)$. This definition doesn't make any
+multiplicative properties apparent. 
+\end{definition}
+
+What is known:
+
+\begin{enumerate}
+\item $K_{-n}(\text{noetherian regular ring/scheme}) = 0$
+\item $K_{-1}(\text{henselian ring}) = 0$ (hard-Drinfeld)
+\item Weibel's conjecture: $X$: noetherian scheme of dimension =
+  $d$. Then $K_{-n}(X)$ are zero if $n > d$. This is a theorem now ($d
+  = 1$, Bass), ($d = 2$, Weibel), ($X$ variety over field of char 0,
+  Haesemeyer-Cortinas-Schlicting-Weibel), ($X/F$ char$(F) > 0$
+  assuming res of singularites, Geisser-Hesselholt/Krishna), (whole
+  thing, Kerz-Strunk-Tamme Nov '16).
+\item Schlicting's conjecture: $K_{-n}(A) = 0$ if $A$ (small)
+  abelian. Still open in general. True if $A$ is noetherian. Also true
+  for $n = 1$ for any small abelian category. 
+\item If $E \in Cat_\infty^{ex}$ has a bounded $t$-structure,
+  $K_{-1}(E) = 0$. If ... with $E^{heart}$ noetherian, $K_{-n}(E) =
+  0$ for all $n \geq 1$. 
+\end{enumerate}
+
+Idea of $K_{-1}(A) = 0$. 
+\[
+\xymatrix{D^b(A) \ar[r]\ar[d] & D^{-}(A) \ar[d] \\ D^+A \ar[r] & D(A)}
+\]
+
+induces pushout square on $K$-theory. $D^+A$ and $D^{-}A$ are
+idempotent complete and $K$-theory acyclic. $K_*(A) = K_*(D^b(A))$,
+$K_0(D(A)) = K_{-1}(A)$. 
 \end{document}

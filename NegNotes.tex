@@ -1,0 +1,234 @@
+\documentclass[letterpaper]{article}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts,amsopn,mathrsfs,mathtools}
+%\usepackage{parskip}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage[all]{xy}
+\usepackage{pdfpages}
+\usepackage[compact]{titlesec}
+\usepackage[normalem]{ulem}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{tabulary}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linktoc=all,linkcolor=blue}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[lemma]{Proposition}
+\theoremstyle{definition}
+\newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{example}[lemma]{Example}
+\newtheorem{definition}[lemma]{Definition}
+
+\newtheorem{remark}[lemma]{Remark}
+\newtheorem{question}{Question}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{construction}{Construction}
+
+
+
+\newcommand{\Z}{\mathbb Z}
+
+\newcommand{\mbb}{\mathbb}
+\newcommand{\mc}{\mathcal}
+
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator*{\holim}{holim}
+\DeclareMathOperator*{\hocolim}{hocolim}
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator*{\im}{im}
+\DeclareMathOperator*{\coker}{coker}
+
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+
+
+
+ \setlength{\headheight}{0pt}
+  \lhead{Daniel, Brian, Tsutomu}\chead{UnivKThy Notes}\rhead{Summer 2017}
+  \lfoot{}\cfoot{\thepage}\rfoot{}
+  \pagestyle{fancy}
+
+
+\begin{document}
+
+\begin{remark}
+Notation: $K(-)$ is the connective $K$-theory spectrum, and $\mbb
+K(-)$ is the non-connective $K$-theory spectrum. 
+\end{remark}
+
+\begin{theorem}
+There's a LES of $K$-groups
+\[
+\xymatrix{ \cdots \ar[r] & K_{n+1}(\mbb Q) \ar[r] & \bigoplus_{p} K_n(\mbb F_p) \ar[r] &
+  K_n(\Z) \ar[r] & K_n(\mbb Q) \ar[r] & \dots}
+\]
+
+Thanks to hard work about $K$ theory of fields, gives lots of
+information about $K_*(\Z)$.
+\end{theorem}
+
+This theorem is (non-trivially) a special case of:
+
+\begin{theorem} (Quillen)
+Given $B \subset A$ a Serre subcategory of a small abelian category,
+then we have a cofiber sequence of spectra
+\[
+K(B) \rightarrow K(A) \rightarrow K(A/B).
+\]
+
+Note that in particular, $K_0(A) \twoheadrightarrow K_0(A/B)
+\rightarrow 0$.
+\end{theorem}
+
+\begin{remark}
+This is a premier computational tool. However, not all $K$-groups are
+equivalent to $K$-groups of some abelian category. Notably, $K_*$ of a
+singular scheme, $K_*$ of a ring spectrum, etc. 
+\end{remark}
+
+\begin{remark}
+If $A \rightarrow B \rightarrow C$ is an exact sequence in
+$Cat_{\infty}^{perf}$, it's not true in general that
+\[
+K_0(B) \rightarrow K_0(C) \rightarrow 0
+\]
+is exact. This is the first obstruction to a localization sequence. 
+\end{remark}
+
+\begin{question}
+Is there an easy counterexample? I think possibly a singular cubic
+will work. 
+\end{question}
+
+Fix: Negative $K$-theory.
+
+\begin{theorem}
+If $A \rightarrow B \rightarrow C$ is an exact sequence in
+$Cat_{\infty}^{ex}$, then 
+\[
+\mbb K(A) \rightarrow \mbb K(B) \rightarrow \mbb K(C)
+\]
+is a cofiber sequence.
+\end{theorem}
+
+\begin{construction}
+Idea: Want to find a $C'$ s.t. $K(C') \cong *$ and a map $C
+\rightarrow C'$. Expect exact sequence
+\[
+\xymatrix{K_0(C') \ar[r] & K_0(C'/C) \ar[r] & K_{-1}(C) \ar[r] & K_{-1}(C')}
+\]
+but since $K_*(C') = 0$, just define $K_{-1}(C) = K_0(C'/C)$. Should
+be functorial: $C' = \mc F(C)$. Let $\Sigma C = cofib(C \rightarrow
+F(C))$, then $K_{-n}(C) = K_0(\Sigma^{(n)}C)$.
+\end{construction}
+
+\begin{definition}
+Say $C$ is \emph{flasque} if there are exact functors $F_1,F_2 : C
+\rightarrow C$ and equivalence
+\[
+id \oplus F_1 \cong F_2,
+\]
+and $(F_1)_* = (F_2)_* : K_*(C) \rightarrow K_*(C)$. 
+
+
+\end{definition}
+
+Then $id +
+(F_1)_* : K_*(C) \rightarrow K_*(C) \implies K_*(C) = 0$.
+
+\begin{example}
+\begin{enumerate}
+\item $Ind_\kappa(C)$, $\kappa > \omega$.
+\item $F = (x \mapsto \oplus_{\mbb N} x)$. Then $id \oplus F \cong F$,
+  the Eilenberg-swindle, so $Ind_\kappa(\mc C)$ is $\kappa$-acyclic. 
+\item A ring $R$ is flasque if there's an $R$-bimodule $M$ which is
+  f.g. projective as a right $R$-mod, and there's a bimodule
+  isomorphism $R\oplus M \cong M$. Then $Mod_R, Proj_R$ are flasque. 
+\item $S$ any ring, $C(R) \subseteq End_S(S^\infty)$ row-finite
+  column-finite infinite matrices (the cone ring). This is flasque. 
+\item The suspension ring $\Sigma S = C(S)/M(S)$, where $M(S)$ denotes
+  the ring of finite matrices. Then $K_{-n}(S) = K_0(\Sigma^{(n)} S)$.
+\end{enumerate}
+\end{example}
+
+\begin{remark}
+This construction works just fine for connective ring spectrum. 
+\end{remark}
+
+\begin{construction}
+Model for $K$-theory of connective rings: 
+
+Can define
+
+\[
+\xymatrix{GL_n(R) \ar[r]\ar[d] & M_n(R) \ar[d] \\ GL_n(\pi_0R) \ar[r]
+  & M_n(\pi_0R)}
+\]
+
+Fact: $K_0(R) \cong K_0(\pi_0 R)$. Here the $K$-theory of a ring
+spectrum is the $K$-theory of the category of compact projective $R$-mods.
+Define $K_*(R) := \pi_*[K_0(\pi_0R) \times BGL(R)^+]$.
+
+Have a map $K_*(R) \rightarrow K_*(\pi_0(R))$. Compare the ``ring
+suspensions'':
+
+have $\pi_0(\Sigma_{ring} R) = \Sigma_{ring} \pi_0R$, so 
+
+\[
+\xymatrix{K_{-1}(R) \ar[r]\ar[d] & K_0(\Sigma_{ring}R)
+\ar[d]\\K_{-1}(\pi_0R) \ar[r] &K_0(\pi_0\Sigma_{ring}R)}
+\]
+
+Upshot: $K_{-n}(R) = K_{-n}(\pi_0R)$ for $R$ connective. 
+\end{construction}
+
+\begin{definition}
+$C \in Cat_{\infty}^{ex}$. Define $\mc F_k(C) = Ind_\kappa(C)$,
+$\Sigma_\kappa C = \mc F_\kappa (C)/C$, $K_{-n}(C) =
+K_0(\Sigma_\kappa^{(n)} C)$, $\mbb K(C) = \colim_n \Omega^n
+K(\Sigma^{(n)}_\kappa C)$. This definition doesn't make any
+multiplicative properties apparent. 
+\end{definition}
+
+What is known:
+
+\begin{enumerate}
+\item $K_{-n}(\text{noetherian regular ring/scheme}) = 0$
+\item $K_{-1}(\text{henselian ring}) = 0$ (hard-Drinfeld)
+\item Weibel's conjecture: $X$: noetherian scheme of dimension =
+  $d$. Then $K_{-n}(X)$ are zero if $n > d$. This is a theorem now ($d
+  = 1$, Bass), ($d = 2$, Weibel), ($X$ variety over field of char 0,
+  Haesemeyer-Cortinas-Schlicting-Weibel), ($X/F$ char$(F) > 0$
+  assuming res of singularites, Geisser-Hesselholt/Krishna), (whole
+  thing, Kerz-Strunk-Tamme Nov '16).
+\item Schlicting's conjecture: $K_{-n}(A) = 0$ if $A$ (small)
+  abelian. Still open in general. True if $A$ is noetherian. Also true
+  for $n = 1$ for any small abelian category. 
+\item If $E \in Cat_\infty^{ex}$ has a bounded $t$-structure,
+  $K_{-1}(E) = 0$. If ... with $E^{heart}$ noetherian, $K_{-n}(E) =
+  0$ for all $n \geq 1$. 
+\end{enumerate}
+
+Idea of $K_{-1}(A) = 0$. 
+\[
+\xymatrix{D^b(A) \ar[r]\ar[d] & D^{-}(A) \ar[d] \\ D^+A \ar[r] & D(A)}
+\]
+
+induces pushout square on $K$-theory. $D^+A$ and $D^{-}A$ are
+idempotent complete and $K$-theory acyclic. $K_*(A) = K_*(D^b(A))$,
+$K_0(D(A)) = K_{-1}(A)$. 
+\end{document}

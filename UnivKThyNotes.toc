@@ -1,11 +1,11 @@
 \contentsline {section}{\numberline {1}Spectral Categories}{2}{section.1}
 \contentsline {subsection}{\numberline {1.1}Summary}{2}{subsection.1.1}
 \contentsline {subsubsection}{\numberline {1.1.1}Important definitions}{2}{subsubsection.1.1.1}
-\contentsline {subsubsection}{\numberline {1.1.2}Notation}{2}{subsubsection.1.1.2}
-\contentsline {subsubsection}{\numberline {1.1.3}Key results}{2}{subsubsection.1.1.3}
+\contentsline {subsubsection}{\numberline {1.1.2}Notation}{3}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Key results}{3}{subsubsection.1.1.3}
 \contentsline {subsection}{\numberline {1.2}Clarifying Remarks}{3}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}Background Material}{3}{subsection.1.3}
-\contentsline {subsubsection}{\numberline {1.3.1}Combinatorial Model Categories}{3}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.1}Combinatorial Model Categories}{4}{subsubsection.1.3.1}
 \contentsline {section}{\numberline {2}Stable $\infty $-categories}{6}{section.2}
 \contentsline {subsection}{\numberline {2.1}Summary}{6}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Important definitions}{6}{subsubsection.2.1.1}
@@ -57,3 +57,12 @@
 \contentsline {subsubsection}{\numberline {7.3.1}Arrow Categories}{16}{subsubsection.7.3.1}
 \contentsline {subsubsection}{\numberline {7.3.2}$K$-theory via group completion}{17}{subsubsection.7.3.2}
 \contentsline {subsubsection}{\numberline {7.3.3}Chunks}{18}{subsubsection.7.3.3}
+\contentsline {section}{\numberline {8}Localization}{19}{section.8}
+\contentsline {subsection}{\numberline {8.1}Summary}{19}{subsection.8.1}
+\contentsline {subsubsection}{\numberline {8.1.1}Important definitions}{19}{subsubsection.8.1.1}
+\contentsline {subsubsection}{\numberline {8.1.2}Notation}{19}{subsubsection.8.1.2}
+\contentsline {subsubsection}{\numberline {8.1.3}Key Results}{19}{subsubsection.8.1.3}
+\contentsline {subsection}{\numberline {8.2}Clarifying Remarks}{19}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Background Material}{19}{subsection.8.3}
+\contentsline {subsubsection}{\numberline {8.3.1}Localization Theorems}{19}{subsubsection.8.3.1}
+\contentsline {subsubsection}{\numberline {8.3.2}Negative $K$-theory (Notes from Jeremiah's Talk)}{20}{subsubsection.8.3.2}
